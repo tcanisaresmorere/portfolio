@@ -136,3 +136,42 @@ body {
   color: #012A6C;
   line-height: 1.6;
 }
+
+/* Info Bar at bottom */
+.info-bar {
+  background: #012A6C;      /* bleu foncé */
+  color: #F9F2E0;          /* texte clair */
+  font-size: 0.9rem;
+}
+
+.info-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.info-left, .info-center, .info-right {
+  flex: 1;
+  text-align: center;
+}
+
+.info-footer {
+  background: #012A6C;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0.3rem 0;
+  border-top: 1px solid #F9F2E0;
+}
+
+/* Optionnel : toujours collé en bas de page */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
