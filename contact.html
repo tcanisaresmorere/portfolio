@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Thomas Canisares–Morère</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding">
+        <div class="logo"></div>
+        <div class="name-tagline">
+          <h1 class="name">Thomas Canisares–Morère</h1>
+          <p class="tagline">Engineering student</p>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html">Welcome</a></li>
+          <li><a href="engineering-course.html">Engineering course</a></li>
+          <li><a href="international-mobility.html">International Mobility</a></li>
+          <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
+          <li><a href="internships.html">Internships</a></li>
+          <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
+          <li><a href="sport.html">Sport & Other Activities</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>If you wish to get in touch with me, feel free to use the form below or contact me directly at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+        <form class="contact-form" action="#" method="POST" onsubmit="alert('Form submitted (simulation)'); return false;">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <textarea name="message" placeholder="Your message" required></textarea>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Thomas Canisares–Morère</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
