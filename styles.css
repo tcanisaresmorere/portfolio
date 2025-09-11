@@ -292,3 +292,41 @@ a {
 .skills-summary li {
   margin-bottom: 0.5rem;
 }
+
+/* Assure que la page occupe toute la hauteur */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Le contenu principal prend tout l'espace disponible */
+main {
+  flex: 1;
+}
+
+/* Bandeau info en bas */
+.info-bar {
+  background-color: #012A6C;
+  color: #fff;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Organisation interne du bandeau */
+.info-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.info-footer {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
