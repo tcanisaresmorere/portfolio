@@ -1,97 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>International Mobility | Thomas Canisares–-Morère</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Mobility - Thomas Canisares-Morère</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="branding">
-        <div class="name-tagline">
-          <h1 class="name">Thomas Canisares–-Morère</h1>
-          <p class="tagline">Engineering student in HPC & Big data</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="branding">
+                <div>
+                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
+                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
+                </div>
+            </div>
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
         </div>
-      </div>
-      <nav>
-        <ul class="nav">
-          <li><a href="index.html">Welcome</a></li>
-          <li><a href="engineering-course.html">Engineering course</a></li>
-          <li><a href="international-mobility.html" class="active">International Mobility</a></li>
-          <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
-          <li><a href="internships.html">Internships</a></li>
-          <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-          <li><a href="sport.html">Sport & Other Activities</a></li>
-        </ul>
-      </nav>
+        <nav class="nav container">
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+            <ul>
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="engineering-course.html">Engineering Course</a></li>
+                <li><a href="international-mobility.html" class="active">International Mobility</a></li>
+                <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html">Sport & Other Activities</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="course-section">
+            <h2>International Mobility</h2>
+            <p>Traveling has played an important role in my education, as it allowed me to experience new cultures, 
+            practice foreign languages, and broaden my perspective of the world.  
+            Here are some of the destinations I've had the chance to explore:</p>
+
+            <div class="course-section">
+                <h3>🇬🇧 England</h3>
+                <p>I visited part of southern England, including London and Stonehenge, 
+                as part of a language trip. I lived with local people, which gave me the opportunity 
+                to improve my English and discover British culture from the inside.
+                </p>
+            </div>
+
+            <div class="course-section">
+                <h3>🇪🇸 Spain</h3>
+                <p>I have traveled to Spain several times and discovered different regions of this beautiful country.  
+                I visited Girona twice, a city I really enjoyed.  
+                I also went to Valencia, where I explored the impressive City of Arts and Sciences.  
+                With my family, I discovered Asturias, especially Gijón and its surroundings.  
+                Finally, we traveled down to Salamanca, where I was able to practice speaking Spanish 
+                with locals, which was a very rewarding experience.
+                </p>
+            </div>
+
+            <div class="course-section">
+                <h3>🇮🇹 Italy</h3>
+                <p>With my family, I was lucky enough to visit different regions of Italy: 
+                the Cinque Terre (Five Lands), Florence, and Pisa.  
+                This trip was full of discoveries, from history and architecture to food and culture.  
+                I learned so much, and I am sure I will never forget this experience.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div class="info-bar">
+        <div class="info-inner container">
+            <p class="info-left">📞 +33 6 12 02 53 62</p>
+            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
+            <p class="info-right">🏠 31100 Toulouse, France</p>
+        </div>
     </div>
-  </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <div class="container">
-      <h2>International Mobility</h2>
-      <p>
-        Traveling has played an important role in my education, as it allowed me to experience new cultures, 
-        practice foreign languages, and broaden my perspective of the world.  
-        Here are some of the destinations I’ve had the chance to explore:
-      </p>
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+    </footer>
 
-      <!-- England -->
-      <section class="course-section">
-        <h3>🇬🇧 England</h3>
-        <p>
-          I visited part of southern England, including <strong>London</strong> and <strong>Stonehenge</strong>, 
-          as part of a language trip. I lived with local people, which gave me the opportunity 
-          to improve my English and discover British culture from the inside.
-        </p>
-      </section>
-
-      <!-- Spain -->
-      <section class="course-section">
-        <h3>🇪🇸 Spain</h3>
-        <p>
-          I have traveled to Spain several times and discovered different regions of this beautiful country.  
-          I visited <strong>Girona</strong> twice, a city I really enjoyed.  
-          I also went to <strong>Valencia</strong>, where I explored the impressive <em>City of Arts and Sciences</em>.  
-          With my family, I discovered <strong>Asturias</strong>, especially <strong>Gijón</strong> and its surroundings.  
-          Finally, we traveled down to <strong>Salamanca</strong>, where I was able to practice speaking Spanish 
-          with locals, which was a very rewarding experience.
-        </p>
-      </section>
-
-      <!-- Italy -->
-      <section class="course-section">
-        <h3>🇮🇹 Italy</h3>
-        <p>
-          With my family, I was lucky enough to visit different regions of Italy: 
-          <strong>the Cinque Terre (Five Lands)</strong>, <strong>Florence</strong>, and <strong>Pisa</strong>.  
-          This trip was full of discoveries, from history and architecture to food and culture.  
-          I learned so much, and I am sure I will never forget this experience.
-        </p>
-      </section>
-    </div>
-  </main>
-
-  <!-- INFO BAR -->
-  <div class="info-bar">
-    <div class="container info-inner">
-      <span class="info-left">📞 +33 6 12 02 53 62</span>
-      <span class="info-center">✉️ t.canisares.morere@gmail.com</span>
-      <span class="info-right">🏠 31100 Toulouse, France</span>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Thomas Canisares–-Morère</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

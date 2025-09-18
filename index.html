@@ -1,94 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Thomas Canisares–-Morère | Engineering Student</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-portfolio of Thomas Canisares-Morère, Engineering student in HPC & Big Data at ENSEEIHT Toulouse INP.">
+    <meta name="keywords" content="engineering, HPC, Big Data, portfolio, Thomas Canisares-Morère">
+    <title>Thomas Canisares-Morère - E-Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="branding">
-        <div class="name-tagline">
-          <h1 class="name">Thomas Canisares–-Morère</h1>
-          <p class="tagline">Engineering student in HPC & Big data</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="branding">
+                <div>
+                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
+                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
+                </div>
+            </div>
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
         </div>
-      </div>
-      <nav>
-        <ul class="nav">
-          <li><a href="index.html" class="active">Welcome</a></li>
-          <li><a href="engineering-course.html">Engineering course</a></li>
-          <li><a href="international-mobility.html">International Mobility</a></li>
-          <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
-          <li><a href="internships.html">Internships</a></li>
-          <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-          <li><a href="sport.html">Sport & Other Activities</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        <nav class="nav container">
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+            <ul>
+                <li><a href="index.html" class="active">Welcome</a></li>
+                <li><a href="engineering-course.html">Engineering Course</a></li>
+                <li><a href="international-mobility.html">International Mobility</a></li>
+                <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html">Sport & Other Activities</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <section class="welcome-section">
-      <div class="container welcome-inner">
-        <!-- Photo à gauche -->
-        <div class="welcome-photo">
-          <img src="photo_chemise.jpg" alt="Photo of Thomas">
+    <main class="welcome-section container">
+        <div class="welcome-inner">
+            <div class="welcome-photo">
+                <img src="photo_chemise.jpg" alt="Photo of Thomas Canisares-Morère">
+            </div>
+            <div class="welcome-text">
+                <p>Hello, and welcome to my personal e-portfolio.</p>
+                <p>I am passionate about technology, innovation, and international collaboration.</p>
+                <p>This portfolio gathers my academic journey, professional experiences, and personal projects. Feel free to explore the different sections to know more about me.</p>
+            </div>
         </div>
-
-        <!-- Texte à droite -->
-        <div class="welcome-text">
-          <h2 class="welcome-name">Thomas Canisares–Morère</h2>
-          <p class="welcome-tagline">Engineering student in Digital Sciences</p>
-
-          <p>Hello, and welcome to my personal e-portfolio.</p>
-          <p>I am passionate about technology, innovation, and international collaboration.</p>
-          <p>This portfolio gathers my academic journey, professional experiences, and personal projects. Feel free to explore the different sections to know more about me.</p>
+        <div class="welcome-buttons">
+            <a href="CV_FR.pdf" class="btn" download>CV in French</a>
+            <a href="CV_EN.pdf" class="btn" download>CV in English</a>
+            <a href="https://www.linkedin.com/in/thomas-canisares-morere-03b192328" class="btn btn-linkedin" target="_blank">LinkedIn</a>
         </div>
-      </div>
+    </main>
 
-      <!-- Boutons CV + LinkedIn -->
-      <div class="welcome-buttons">
-        <a href="CV_FR.pdf" class="btn" target="_blank">CV in French</a>
-        <a href="CV_EN.pdf" class="btn" target="_blank">CV in English</a>
-        <a href="https://www.linkedin.com/in/thomas-canisares-morere-03b192328" target="_blank" class="btn btn-linkedin">in</a>
-      </div>
-    </section>
-
-    <!-- MORE ABOUT ME -->
-    <section class="more-about-me">
-      <div class="container">
+    <section class="more-about-me container">
         <h2>More about me</h2>
         <video controls>
-          <source src="montage_final.mp4" type="video/mp4">
+            <source src="assets/video-presentation.mp4" type="video/mp4">
+            Your browser does not support video.
         </video>
-      </div>
     </section>
-  </main>
 
-  <!-- INFO BAR -->
-  <div class="info-bar">
-    <div class="container info-inner">
-      <span class="info-left">📞 +33 6 12 02 53 62</span>
-      <span class="info-center">✉️ t.canisares.morere@gmail.com</span>
-      <span class="info-right">🏠 31100 Toulouse, France</span>
+    <div class="info-bar">
+        <div class="info-inner container">
+            <p class="info-left">📞 +33 6 12 02 53 62</p>
+            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
+            <p class="info-right">🏠 31100 Toulouse, France</p>
+        </div>
     </div>
-  </div>
 
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Thomas Canisares–Morère</p>
-    </div>
-  </footer>
-
-  
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

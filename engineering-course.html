@@ -1,119 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Engineering Course | Thomas Canisares–Morère</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Course - Thomas Canisares-Morère</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="branding">
-        <div class="name-tagline">
-          <h1 class="name">Thomas Canisares–-Morère</h1>
-          <p class="tagline">Engineering student in HPC & Big data</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="branding">
+                <div>
+                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
+                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
+                </div>
+            </div>
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
         </div>
-      </div>
-      <nav>
-        <ul class="nav">
-          <li><a href="index.html">Welcome</a></li>
-          <li><a href="engineering-course.html" class="active">Engineering course</a></li>
-          <li><a href="international-mobility.html">International Mobility</a></li>
-          <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
-          <li><a href="internships.html">Internships</a></li>
-          <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-          <li><a href="sport.html">Sport & Other Activities</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        <nav class="nav container">
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+            <ul>
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="engineering-course.html" class="active">Engineering Course</a></li>
+                <li><a href="international-mobility.html">International Mobility</a></li>
+                <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html">Sport & Other Activities</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <div class="container">
-      <h2>Engineering Course</h2>
+    <main class="container">
+        <section class="course-section">
+            <h2>Engineering Course</h2>
+            
+            <div class="year">
+                <h3>Preparatory Classes for Engineering Schools (CPGE)</h3>
+                
+                <div class="year">
+                    <h4>First year after high school: MPSI</h4>
+                    <p>I started my higher education in MPSI (Mathematics, Physics, and Engineering Sciences).  
+                    This year provided a solid foundation in mathematics and physics,  
+                    introducing rigorous scientific methods and problem-solving skills.
+                    </p>
+                </div>
 
-      <!-- Section CPGE -->
-      <section class="course-section">
-        <h3>Preparatory Classes for Engineering Schools (CPGE)</h3>
+                <div class="year">
+                    <h4>Second year after high school: PSI</h4>
+                    <p>In PSI (Physics and Engineering Sciences), the curriculum became more advanced,  
+                    focusing on mechanics, electronics, and applied mathematics.  
+                    I also prepared intensively for the competitive national entrance exams to French engineering schools.
+                    </p>
+                </div>
+            </div>
 
-        <article class="year">
-          <h4>First year after high school: MPSI</h4>
-          <p>
-            I started my higher education in <strong>MPSI (Mathematics, Physics, and Engineering Sciences)</strong>.  
-            This year provided a solid foundation in mathematics and physics,  
-            introducing rigorous scientific methods and problem-solving skills.
-          </p>
-        </article>
+            <div class="course-section">
+                <h3>Supervised Personal Initiative Project (TIPE)</h3>
+                <p>During my two years in CPGE, I carried out a TIPE (Travaux d'Initiative Personnelle Encadrés) project entitled:</p>
+                <h4>"Optimization and Simulation of the French Billiard Game"</h4>
+                <a href="tipe.html" class="btn">TIPE Details</a>
+            </div>
 
-        <article class="year">
-          <h4>Second year after high school: PSI</h4>
-          <p>
-            In <strong>PSI (Physics and Engineering Sciences)</strong>, the curriculum became more advanced,  
-            focusing on mechanics, electronics, and applied mathematics.  
-            I also prepared intensively for the competitive national entrance exams to French engineering schools.
-          </p>
-        </article>
-      </section>
+            <div class="course-section">
+                <h3>ENSEEIHT – Toulouse INP</h3>
+                
+                <div class="year">
+                    <h4>Third year after high school: Digital Sciences Department (SN)</h4>
+                    <p>I joined the ENSEEIHT, Toulouse INP in the Digital Sciences (SN) department.  
+                    This year marked the transition from general scientific training to computer science and digital technologies.  
+                    I learned programming, algorithms, and data structures, and worked on practical projects to apply theoretical knowledge.
+                    </p>
+                </div>
 
-      <!-- Section TIPE -->
-      <section class="course-section">
-        <h3>Supervised Personal Initiative Project (TIPE)</h3>
-        <p>
-          During my two years in CPGE, I carried out a <strong>TIPE (Travaux d’Initiative Personnelle Encadrés)</strong> project entitled:
-          <em>"Optimization and Simulation of the French Billiard Game"</em>.
-        </p>
-        <div class="welcome-buttons">
-          <a href="tipe.html" class="btn">TIPE</a>
+                <div class="year">
+                    <h4>Fourth year after high school: HPC & Big Data Specialization</h4>
+                    <p>My second year at ENSEEIHT focused on High-Performance Computing (HPC) and Big Data.  
+                    I acquired advanced skills in parallel and distributed computing, cloud technologies,  
+                    and large-scale data processing. Projects included optimizing performance on complex datasets,  
+                    developing scalable software solutions, and applying cutting-edge technologies to real-world problems.  
+                    This specialization has prepared me to tackle challenges in modern computing and data analysis.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="info-bar">
+        <div class="info-inner container">
+            <p class="info-left">📞 +33 6 12 02 53 62</p>
+            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
+            <p class="info-right">🏠 31100 Toulouse, France</p>
         </div>
-      </section>
-
-
-      <!-- Section ENSEEIHT -->
-      <section class="course-section">
-        <h3>ENSEEIHT – Toulouse INP</h3>
-
-        <article class="year">
-          <h4>Third year after high school: Digital Sciences Department (SN)</h4>
-          <p>
-            I joined the <strong>ENSEEIHT, Toulouse INP</strong> in the <strong>Digital Sciences (SN) department</strong>.  
-            This year marked the transition from general scientific training to computer science and digital technologies.  
-            I learned programming, algorithms, and data structures, and worked on practical projects to apply theoretical knowledge.
-          </p>
-        </article>
-
-        <article class="year">
-          <h4>Fourth year after high school: HPC & Big Data Specialization</h4>
-          <p>
-            My second year at ENSEEIHT focused on <strong>High-Performance Computing (HPC) and Big Data</strong>.  
-            I acquired advanced skills in parallel and distributed computing, cloud technologies,  
-            and large-scale data processing. Projects included optimizing performance on complex datasets,  
-            developing scalable software solutions, and applying cutting-edge technologies to real-world problems.  
-            This specialization has prepared me to tackle challenges in modern computing and data analysis.
-          </p>
-        </article>
-      </section>
     </div>
-  </main>
 
-  <!-- INFO BAR -->
-  <div class="info-bar">
-    <div class="container info-inner">
-      <span class="info-left">📞 +33 6 12 02 53 62</span>
-      <span class="info-center">✉️ t.canisares.morere@gmail.com</span>
-      <span class="info-right">🏠 31100 Toulouse, France</span>
-    </div>
-  </div>
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Thomas Canisares–Morère</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

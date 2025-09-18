@@ -1,125 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Internships | Thomas Canisares–Morère</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships - Thomas Canisares-Morère</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="branding">
-        <div class="logo"></div>
-        <div class="name-tagline">
-          <h1 class="name">Thomas Canisares–Morère</h1>
-          <p class="tagline">Engineering student in HPC & Big data</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="branding">
+                <div>
+                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
+                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
+                </div>
+            </div>
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
         </div>
-      </div>
-      <nav>
-        <ul class="nav">
-          <li><a href="index.html">Welcome</a></li>
-          <li><a href="engineering-course.html">Engineering course</a></li>
-          <li><a href="international-mobility.html">International Mobility</a></li>
-          <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
-          <li><a href="internships.html" class="active">Internships</a></li>
-          <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-          <li><a href="sport.html">Sport & Other Activities</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <div class="container">
-      <h2>Internships</h2>
-  
-      <p class="intro-text">
-        Throughout my engineering studies, I've completed hands-on internships that bridged theoretical knowledge with real-world applications. Below, I detail my experiences, including key missions, technical contributions, and skills developed. These opportunities have honed my problem-solving abilities in manufacturing and data analysis.
-      </p>
+        <nav class="nav container">
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+            <ul>
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="engineering-course.html">Engineering Course</a></li>
+                <li><a href="international-mobility.html">International Mobility</a></li>
+                <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
+                <li><a href="internships.html" class="active">Internships</a></li>
+                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html">Sport & Other Activities</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <!-- Internship Entry: TE Connectivity -->
-      <div class="internship-entry year">
-        <h3>Manufacturing Engineering Intern</h3>
-        <h4>TE Connectivity, France | Summer 2025 (2 months)</h4> <!-- Replace 202X with actual year if needed -->
-    
-        <!-- Suggested Image: Company Logo or Internship Photo -->
-        <div class="image-placeholder">
-          <img src="TE_logo.png" alt="TE Connectivity Logo" style="max-width: 300px; border-radius: 8px; margin-bottom: 1rem;">
+    <main class="container">
+        <section class="course-section">
+            <h2>Internships</h2>
+            <p class="intro-text">Throughout my engineering studies, I've completed hands-on internships that bridged theoretical knowledge with real-world applications. Below, I detail my experiences, including key missions, technical contributions, and skills developed. These opportunities have honed my problem-solving abilities in manufacturing and data analysis.</p>
+        </section>
+
+        <section class="internship-entry">
+            <h3>Manufacturing Engineering Intern</h3>
+            <h4>TE Connectivity, France | Summer 2025 (2 months)</h4>
+            
+            <div class="te-section">
+                <img src="TE_logo.png" alt="TE Connectivity logo" class="company-logo">
+                <div>
+                    <p>During the summer between my first and second year at ENSEEIHT (Toulouse INP), I joined the Manufacturing Engineering team at TE Connectivity. My primary goal was to minimize false rejects on the HTGB machine, which uses an Automated Optical Inspection (AOI) camera, while also reducing overall rejects. The machine applies tin solder to PCBs (soldering 3 pins per board) and deposits silicone around the perimeter—though my focus was solely on the soldering process.</p>
+                    
+                    <p>Data collection was a key challenge: Soldering parameters (9 in total: 3 surfaces, 3 heights, 3 volumes) and the Flex Status were stored in a CSV file on the production line workstation. Meanwhile, around 40 other parameters were sent via PLC to a separate database. I unified all this data into a single table for streamlined analysis.</p>
+                </div>
+            </div>
+
+            <p>In parallel, I developed Python scripts for data exploration and visualization to identify patterns in false rejects. Key scripts included:</p>
+            <ul class="skills-summary">
+                <li>Box plots for parameter distribution analysis.</li>
+                <li>Histograms and density plots, with calculations for basic statistics (mean, standard deviation, 3-sigma/6-sigma thresholds) and process capabilities (Cp and Cpk).</li>
+                <li>Control charts to monitor process stability.</li>
+                <li>2D scatter plots correlating surface vs. height, height vs. volume, and volume vs. surface.</li>
+            </ul>
+
+            <p>I also explored JMP software for statistical analysis, used by the Process team. To pinpoint causes of false rejects, I created a Python tool for 2D graphical visualization of 11 key parameters. This involved Principal Component Analysis (PCA) on soldering parameters, RFID shuttle numbers, and PCB suppliers, followed by clustering with One-Class Support Vector Machines (SVM). Daily, I reviewed false reject parts from operators and AOI camera images to refine the model. With a larger dataset, this could evolve into an automated false reject detection system for the HTGB AOI.</p>
+
+            <p>Working alongside experts like Hélène Choteau and Sarah Albert, I gained deep insights into process engineering and soldering. This internship strengthened my Python and SQL programming skills, introduced me to AOI cameras and their capabilities, and emphasized data-driven manufacturing improvements.</p>
+        </section>
+
+        <section class="course-section">
+            <h3>Key Skills Developed Across Internships</h3>
+            <ul class="skills-summary">
+                <li>Data unification and analysis (Python, SQL, JMP).</li>
+                <li>Statistical modeling (PCA, SVM clustering).</li>
+                <li>Process optimization in manufacturing environments.</li>
+                <li>Visualization tools for industrial data (box plots, control charts).</li>
+                <li>Collaboration with cross-functional teams.</li>
+            </ul>
+        </section>
+    </main>
+
+    <div class="info-bar">
+        <div class="info-inner container">
+            <p class="info-left">📞 +33 6 12 02 53 62</p>
+            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
+            <p class="info-right">🏠 31100 Toulouse, France</p>
         </div>
-    
-        <p>
-          During the summer between my first and second year at ENSEEIHT (Toulouse INP), I joined the Manufacturing Engineering team at TE Connectivity. My primary goal was to minimize false rejects on the HTGB machine, which uses an Automated Optical Inspection (AOI) camera, while also reducing overall rejects. The machine applies tin solder to PCBs (soldering 3 pins per board) and deposits silicone around the perimeter—though my focus was solely on the soldering process.
-        </p>
-    
-        <p>
-          Data collection was a key challenge: Soldering parameters (9 in total: 3 surfaces, 3 heights, 3 volumes) and the Flex Status were stored in a CSV file on the production line workstation. Meanwhile, around 40 other parameters were sent via PLC to a separate database. I unified all this data into a single table for streamlined analysis.
-        </p>
-    
-        <!-- Suggested Image: Machine or Process Diagram -->
-        <div class="image-placeholder">
-          <img src="logo_python.jpeg" alt="logo python" style="max-width: 150px; border: 1px solid #012A6C; border-radius: 8px; margin: 1rem 0;">
-        </div>
-    
-        <p>
-          In parallel, I developed Python scripts for data exploration and visualization to identify patterns in false rejects. Key scripts included:
-        </p>
-        <ul>
-          <li>Box plots for parameter distribution analysis.</li>
-          <li>Histograms and density plots, with calculations for basic statistics (mean, standard deviation, 3-sigma/6-sigma thresholds) and process capabilities (Cp and Cpk).</li>
-          <li>Control charts to monitor process stability.</li>
-          <li>2D scatter plots correlating surface vs. height, height vs. volume, and volume vs. surface.</li>
-        </ul>
-    
-        <p>
-          I also explored JMP software for statistical analysis, used by the Process team. To pinpoint causes of false rejects, I created a Python tool for 2D graphical visualization of 11 key parameters. This involved Principal Component Analysis (PCA) on soldering parameters, RFID shuttle numbers, and PCB suppliers, followed by clustering with One-Class Support Vector Machines (SVM). Daily, I reviewed false reject parts from operators and AOI camera images to refine the model. With a larger dataset, this could evolve into an automated false reject detection system for the HTGB AOI.
-        </p>
-    
-        <!-- Suggested Image: Data Visualization Example -->
-        <div class="image-placeholder">
-          <img src="result_stage.jpg" alt="Sample Box Plot from Data Analysis" style="max-width: 50%; border: 1px solid #012A6C; border-radius: 8px; margin: 1rem 0;">
-        </div>
-    
-        <p>
-          Working alongside experts like Hélène Choteau and Sarah Albert, I gained deep insights into process engineering and soldering. This internship strengthened my Python and SQL programming skills, introduced me to AOI cameras and their capabilities, and emphasized data-driven manufacturing improvements.
-        </p>
-      </div>
-
-      <!-- Future Internships Placeholder -->
-      <div class="future-internships">
-        <h3>Upcoming or Additional Internships</h3>
-        <p>
-          (Add more entries here as you complete future internships, following the same structure for consistency.)
-        </p>
-      </div>
-
-      <!-- Skills Summary -->
-      <div class="skills-summary">
-        <h3>Key Skills Developed Across Internships</h3>
-        <ul>
-          <li>Data unification and analysis (Python, SQL, JMP).</li>
-          <li>Statistical modeling (PCA, SVM clustering).</li>
-          <li>Process optimization in manufacturing environments.</li>
-          <li>Visualization tools for industrial data (box plots, control charts).</li>
-          <li>Collaboration with cross-functional teams.</li>
-        </ul>
-      </div>
     </div>
-  </main>
 
-  <!-- INFO BAR -->
-  <div class="info-bar">
-    <div class="container info-inner">
-      <span class="info-left">📞 +33 6 12 02 53 62</span>
-      <span class="info-center">✉️ t.canisares.morere@gmail.com</span>
-      <span class="info-right">🏠 31100 Toulouse, France</span>
-    </div>
-  </div>
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+    </footer>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Thomas Canisares–Morère</p>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

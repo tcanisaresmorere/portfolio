@@ -1,160 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Personal Professional Project | Thomas Canisares–-Morère</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Professional Project - Thomas Canisares-Morère</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="branding">
-        <div class="name-tagline">
-          <h1 class="name">Thomas Canisares–-Morère</h1>
-          <p class="tagline">Engineering student in HPC & Big data</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="branding">
+                <div>
+                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
+                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
+                </div>
+            </div>
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
         </div>
-      </div>
-      <nav>
-        <ul class="nav">
-          <li><a href="index.html">Welcome</a></li>
-          <li><a href="engineering-course.html">Engineering course</a></li>
-          <li><a href="international-mobility.html">International Mobility</a></li>
-          <li><a href="personal-professional-project.html" class="active">Personal Professional Project</a></li>
-          <li><a href="internships.html">Internships</a></li>
-          <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-          <li><a href="sport.html">Sport & Other Activities</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        <nav class="nav container">
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+            <ul>
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="engineering-course.html">Engineering Course</a></li>
+                <li><a href="international-mobility.html">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="active">Personal Professional Project</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html">Sport & Other Activities</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <div class="container">
-      <h2>Personal Professional Project (PPP)</h2>
-      <p>
-        Over time, I’ve realized that connecting with mentors and engaging with industry professionals 
-        is one of the best ways to stay updated on the job market and its expectations. 
-        To achieve this, I rely on a range of tools and strategies, particularly <strong>LinkedIn</strong> and 
-        <strong>MyJobGlasses</strong>, which allow me to reach out to engineers and managers from different sectors.
-      </p>
+    <main class="container">
+        <section class="course-section">
+            <h2>Personal Professional Project (PPP)</h2>
+            <p>Over time, I've realized that connecting with mentors and engaging with industry professionals 
+            is one of the best ways to stay updated on the job market and its expectations. 
+            To achieve this, I rely on a range of tools and strategies, particularly LinkedIn and 
+            MyJobGlasses, which allow me to reach out to engineers and managers from different sectors.
+            </p>
 
-      <!-- Career interests -->
-      <section class="course-section">
-        <h3>Career Interests</h3>
-        <p>
-          I am open to diverse professional sectors, but two domains particularly stand out for me: 
-          <strong>transportation (aeronautics and aerospace included)</strong> and <strong>finance</strong>.  
-          What connects these areas is my strong interest in <em>applied mathematics</em>, 
-          as both offer opportunities to work with algorithms, data, and optimization.
-        </p>
-        <p>
-          Aeronautics and aerospace fascinate me because of their technological challenges and their 
-          contribution to global mobility. This is why I first sought to interview professionals working in this sector.  
-          At the same time, the finance industry also attracts me, as it combines mathematical rigor and 
-          advanced computing, particularly in algorithmic trading and risk analysis.
-        </p>
-      </section>
+            <div class="course-section">
+                <h3>Career Interests</h3>
+                <p>I am open to diverse professional sectors, but two domains particularly stand out for me: 
+                transportation (aeronautics and aerospace included) and finance.  
+                What connects these areas is my strong interest in applied mathematics, 
+                as both offer opportunities to work with algorithms, data, and optimization.
+                </p>
 
-      <!-- Connecting with mentors -->
-      <section class="course-section">
-        <h3>Connecting with Mentors</h3>
-        <p>
-          Thanks to <strong>MyJobGlasses</strong>, I was able to connect with professionals from leading companies.  
-          I had the chance to interview <strong>Yan Frick</strong> (Head of Digital and IS, Thales Flight Line Avionics BU) 
-          and <strong>Yohann P.</strong> (Engineering Delivery Manager, Thales).  
-          They provided valuable insights into career opportunities, the importance of adaptability, 
-          and the skills sought by major companies in the aeronautics sector.
-        </p>
+                <p>Aeronautics and aerospace fascinate me because of their technological challenges and their 
+                contribution to global mobility. This is why I first sought to interview professionals working in this sector.  
+                At the same time, the finance industry also attracts me, as it combines mathematical rigor and 
+                advanced computing, particularly in algorithmic trading and risk analysis.
+                </p>
+            </div>
 
-        <!-- Photos + Thales logo -->
-        <div class="mentor-row">
-          <div class="mentor-card">
-            <img src="yan_frick.avif" alt="Yan Frick" class="mentor-photo">
-            <p class="mentor-name">Yan Frick</p>
-          </div>
-          <div class="mentor-card">
-            <img src="thales_logo.png" alt="Thales logo" class="company-logo" style="max-width: 500px; border-radius: 8px; margin-bottom: 1rem;">
-          </div>
-          <div class="mentor-card">
-            <img src="yohann_p.avif" alt="Yohann P." class="mentor-photo">
-            <p class="mentor-name">Yohann P.</p>
-          </div>
+            <div class="course-section">
+                <h3>Connecting with Mentors</h3>
+                <p>Thanks to MyJobGlasses, I was able to connect with professionals from leading companies.  
+                I had the chance to interview Yan Frick (Head of Digital and IS, Thales Flight Line Avionics BU) 
+                and Yohann P. (Engineering Delivery Manager, Thales).  
+                They provided valuable insights into career opportunities, the importance of adaptability, 
+                and the skills sought by major companies in the aeronautics sector.
+                </p>
+
+                <div class="mentor-row">
+                    <div class="mentor-card">
+                        <img src="yan_frick.avif" alt="Yan Frick" class="mentor-photo">
+                        <p class="mentor-name">Yan Frick</p>
+                        <p class="mentor-title">Head of Digital and IS, Thales</p>
+                    </div>
+                    <div class="mentor-card">
+                        <img src="yohann_p.avif" alt="Yohann P." class="mentor-photo">
+                        <p class="mentor-name">Yohann P.</p>
+                        <p class="mentor-title">Engineering Delivery Manager, Thales</p>
+                    </div>
+                </div>
+
+                <p>These exchanges were very enriching and helped me better understand both the daily work of engineers 
+                and the expectations of large industrial groups. They also reinforced my motivation to continue developing 
+                my technical expertise and adaptability.
+                </p>
+            </div>
+
+            <div class="course-section">
+                <h3>Transport Industry & Internship Experience</h3>
+                <p>The transportation sector fascinates me, not only because of its technological innovations 
+                but also because of its strong societal impact.  
+                This is one of the reasons I chose to complete my internship at TE Connectivity, 
+                an international leader in connectivity and sensor solutions.
+                </p>
+
+                <div class="image-placeholder">
+                    <img src="TE_logo.png" alt="TE Connectivity Toulouse facility">
+                    <p class="caption">TE Connectivity manufacturing facility in Toulouse</p>
+                </div>
+
+                <p>At the Toulouse site, TE Connectivity manufactures a wide range of sensors, including those for 
+                humidity, temperature, viscosity, fluid characteristics (such as oil), and speed measurement.  
+                These applications are essential to ensure the safety, efficiency, and performance of vehicles 
+                and industrial systems.  
+                This internship gave me valuable insights into the transport industry and reinforced my motivation 
+                to contribute to this exciting field.
+                </p>
+            </div>
+
+            <div class="course-section">
+                <h3>Deliverables</h3>
+                <p>As part of this PPP, I produced several documents that reflect my research, interviews, and career reflections:</p>
+                <ul class="skills-summary">
+                    <li>CVs and cover letter templates (in French and English)</li>
+                    <li>Mentor interview reports (summaries of exchanges with professionals)</li>
+                    <li>Internship reports and mission summaries</li>
+                    <li>Other relevant documents related to my career exploration</li>
+                    <li>A PowerPoint presentation (5–8 slides) summarizing my PPP, 
+                    which will also serve as a support for an oral presentation.</li>
+                </ul>
+
+                <div class="welcome-buttons">
+                    <a href="assets/cv-fr.pdf" class="btn" download>CV</a>
+                    <a href="assets/cover-letter.pdf" class="btn" download>Cover Letter</a>
+                    <a href="assets/mentor-reports.pdf" class="btn" download>Mentor Reports</a>
+                    <a href="assets/ppp-presentation.pdf" class="btn" download>PPP Presentation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="info-bar">
+        <div class="info-inner container">
+            <p class="info-left">📞 +33 6 12 02 53 62</p>
+            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
+            <p class="info-right">🏠 31100 Toulouse, France</p>
         </div>
-
-        <p>
-          These exchanges were very enriching and helped me better understand both the daily work of engineers 
-          and the expectations of large industrial groups. They also reinforced my motivation to continue developing 
-          my technical expertise and adaptability.
-        </p>
-      </section>
-
-      <section class="course-section">
-        <h3>Transport Industry & Internship Experience</h3>
-        <p>
-          The transportation sector fascinates me, not only because of its technological innovations 
-          but also because of its strong societal impact.  
-          This is one of the reasons I chose to complete my internship at <strong>TE Connectivity</strong>, 
-          an international leader in connectivity and sensor solutions.
-        </p>
-
-        <div class="te-section">
-          <img src="TE_logo.png" alt="TE Connectivity logo" class="company-logo">
-          <p>
-            At the Toulouse site, TE Connectivity manufactures a wide range of sensors, including those for 
-            <em>humidity, temperature, viscosity, fluid characteristics (such as oil), and speed measurement</em>.  
-            These applications are essential to ensure the safety, efficiency, and performance of vehicles 
-            and industrial systems.  
-            This internship gave me valuable insights into the transport industry and reinforced my motivation 
-            to contribute to this exciting field.
-          </p>
-        </div>
-      </section>
-
-
-
-      <!-- Deliverables -->
-      <section class="course-section">
-        <h3>Deliverables</h3>
-        <p>
-          As part of this PPP, I produced several documents that reflect my research, interviews, and career reflections:
-        </p>
-        <ul>
-          <li><strong>CVs and cover letter templates</strong> (in French and English)</li>
-          <li><strong>Mentor interview reports</strong> (summaries of exchanges with professionals)</li>
-          <li><strong>Internship reports</strong> and mission summaries</li>
-          <li><strong>Other relevant documents</strong> related to my career exploration</li>
-          <li>A <strong>PowerPoint presentation (5–8 slides)</strong> summarizing my PPP, 
-              which will also serve as a support for an oral presentation.</li>
-        </ul>
-        <div class="button-row">
-          <a href="docs/CV.pdf" class="btn">CV</a>
-          <a href="docs/cover-letter.pdf" class="btn">Cover Letter</a>
-          <a href="docs/mentor-reports.pdf" class="btn">Mentor Reports</a>
-          <a href="docs/presentation.pdf" class="btn">PPP Presentation</a>
-        </div>
-      </section>
     </div>
-  </main>
 
-  <!-- INFO BAR -->
-  <div class="info-bar">
-    <div class="container info-inner">
-      <span class="info-left">📞 +33 6 12 02 53 62</span>
-      <span class="info-center">✉️ t.canisares.morere@gmail.com</span>
-      <span class="info-right">🏠 31100 Toulouse, France</span>
-    </div>
-  </div>
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Thomas Canisares-–Morère</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
