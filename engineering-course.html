@@ -4,95 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineering Course - Thomas Canisares-Morère</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2962FF',
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            }
+          }
+        },
+        darkMode: 'class',  // Important pour ton dark mode existant
+      }
+    </script>
 </head>
-<body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="branding">
-                <div>
-                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
-                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
-                </div>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Script pour appliquer le dark mode dès le chargement -->
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
+            <!-- Branding -->
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
             </div>
-            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+
+            <!-- Bouton Dark Mode -->
+            <button id="dark-mode-toggle" class="text-3xl bg-gray-200 dark:bg-gray-700 rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
+                🌙
+            </button>
         </div>
-        <nav class="nav container">
-            <button class="menu-toggle" aria-label="Open menu">☰</button>
-            <ul>
-                <li><a href="index.html">Welcome</a></li>
-                <li><a href="engineering-course.html" class="active">Engineering Course</a></li>
-                <li><a href="international-mobility.html">International Mobility</a></li>
-                <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
-                <li><a href="internships.html">Internships</a></li>
-                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-                <li><a href="sport.html">Sport & Other Activities</a></li>
+
+        <nav class="max-w-6xl mx-auto px-4 mt-4">
+            <!-- Bouton burger (visible seulement sur mobile) -->
+            <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
+
+            <!-- Liste des liens -->
+            <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 bg-white dark:bg-gray-800 rounded-3xl py-4 px-6 shadow-lg 
+                    md:flex md:items-center 
+                    hidden md:flex
+                    text-gray-800 dark:text-gray-200">
+
+                <li><a href="index.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Welcome</a></li>
+                <li><a href="engineering-course.html" class="block px-6 py-3 rounded-full bg-primary text-white font-semibold">Engineering Course</a></li>
+                <li><a href="international-mobility.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Personal Professional Project</a></li>
+                <li><a href="internships.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Internships</a></li>
+                <li><a href="sustainability.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sport & Other Activities</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="course-section">
-            <h2>Engineering Course</h2>
-            
-            <div class="course-section">
-                <h3>Preparatory Classes for Engineering Schools (CPGE)</h3>
-                
-                <div class="year">
-                    <h4>First year after high school: MPSI</h4>
-                    <p>I started my higher education in MPSI (Mathematics, Physics, and Engineering Sciences).  
-                    This year provided a solid foundation in mathematics and physics,  
-                    introducing rigorous scientific methods and problem-solving skills.
-                    </p>
+    <main class="max-w-5xl mx-auto px-4 py-12 md:py-20">
+        <!-- Titre principal -->
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-16">
+            Engineering Course
+        </h1>
+
+        <!-- Timeline du parcours -->
+        <div class="relative">
+            <!-- Ligne verticale centrale (visible sur desktop) -->
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full"></div>
+
+            <!-- Années du parcours -->
+            <div class="space-y-20">
+                <!-- Année 1 : MPSI -->
+                <div class="relative flex items-center">
+                    <div class="md:w-1/2 md:pr-12 text-right">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <h3 class="text-2xl font-bold text-primary mb-4">First year (CPGE): MPSI</h3>
+                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                                I started my higher education in MPSI (Mathematics, Physics, and Engineering Sciences).  
+                                This year provided a solid foundation in mathematics and physics, introducing rigorous scientific methods and problem-solving skills.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
+                    <div class="md:w-1/2 md:pl-12"></div>
                 </div>
 
-                <div class="year">
-                    <h4>Second year after high school: PSI</h4>
-                    <p>In PSI (Physics and Engineering Sciences), the curriculum became more advanced,  
-                    focusing on mechanics, electronics, and applied mathematics.  
-                    I also prepared intensively for the competitive national entrance exams to French engineering schools.
-                    </p>
+                <!-- Année 2 : PSI -->
+                <div class="relative flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <h3 class="text-2xl font-bold text-primary mb-4">Second year (CPGE): PSI</h3>
+                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                                In PSI (Physics and Engineering Sciences), the curriculum continued to place a strong emphasis on physics and mathematics, while introducing more applied engineering topics.  
+                                This year also involved intensive preparation for the competitive entrance exams to French engineering schools.
+                            </p>
+                            <!-- TIPE -->
+                            <div class="mt-8 p-6 bg-primary/10 dark:bg-primary/20 rounded-xl">
+                                <h4 class="text-xl font-bold text-primary mb-4">
+                                    Supervised Personal Initiative Project (TIPE) – Realized in pair
+                                </h4>
+                                <p class="text-lg mb-4">
+                                    Optimization and Simulation of the French Billiard Game
+                                </p>
+                                <div class="flex flex-wrap justify-center gap-4">
+                                    <a href="rapportTIPE.pdf" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-lg" download>
+                                        View Project Report
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
+                    <div class="md:w-1/2 md:pr-12"></div>
                 </div>
 
-                <div class="course-section">
-                    <h3>Supervised Personal Initiative Project (TIPE)</h3>
-                    <p>During my two years in CPGE, I carried out a TIPE (Travaux d'Initiative Personnelle Encadrés) project entitled:</p>
-                    <h4>"Optimization and Simulation of the French Billiard Game"</h4>
-                    <a href="tipe.html" class="btn">TIPE Details</a>
+                <!-- Année 3 : Digital Sciences (SN) -->
+                <div class="relative flex items-center">
+                    <div class="md:w-1/2 md:pr-12 text-right">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <h3 class="text-2xl font-bold text-primary mb-4">Third year (ENSEEIHT): Digital Sciences Department</h3>
+                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                                I joined ENSEEIHT in the Digital Sciences department.  
+                                This year marked the transition from general scientific training to computer science and digital technologies.  
+                                I built a foundation across all areas of computer science, gaining knowledge and understanding of core concepts.
+                            </p>
+                            <!-- Projet Simulateur de Bourse intégré dans SN -->
+                            <div class="mt-8 p-6 bg-primary/10 dark:bg-primary/20 rounded-xl">
+                                <h4 class="text-xl font-bold text-primary mb-4">
+                                    Major Group Project – Object-Oriented Technology
+                                </h4>
+                                <p class="text-lg mb-4">
+                                    Stock Market Simulator
+                                </p>
+                                <p class="text-base text-gray-600 dark:text-gray-400 mb-6">
+                                    As part of the Object-Oriented Technology course, my team of four developed a complete stock market simulation application in Java.
+                                </p>
+                                <div class="text-center">
+                                    <a href="rapportTOB.pdf" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-lg" download>
+                                        View Project Report
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Année 4 : HPC & Big Data -->
+                <div class="relative flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <h3 class="text-2xl font-bold text-primary mb-4">Fourth year (ENSEEIHT): HPC & Big Data Specialization</h3>
+                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                                In my second year at ENSEEIHT, in the HPC & Big Data track, I deepened my knowledge across both theoretical and applied areas of computer science. My coursework covered functional programming, language translation, automata and graph theory, software and systems engineering, concurrent and distributed systems, databases, advanced linear algebra, multiresolution analysis, geometric modeling, and machine learning with optimization. These studies allowed me to develop strong foundations in algorithms, mathematical modeling, and scalable software development.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
+                    <div class="md:w-1/2 md:pr-12"></div>
                 </div>
             </div>
-
-            <div class="course-section">
-                <h3>ENSEEIHT – Toulouse INP</h3>
-                
-                <div class="year">
-                    <h4>Third year after high school: Digital Sciences Department (SN)</h4>
-                    <p>I joined the ENSEEIHT, Toulouse INP in the Digital Sciences (SN) department.  
-                    This year marked the transition from general scientific training to computer science and digital technologies.  
-                    I built a solid foundation across all areas of computer science, gaining fundamental knowledge and understanding of core concepts.
-                    </p>
-                </div>
-
-                <div class="year">
-                    <h4>Fourth year after high school: HPC & Big Data Specialization</h4>
-                    <p>In my second year at ENSEEIHT, in the HPC & Big Data track, I deepened my knowledge across both theoretical and applied areas of computer science. My coursework covered functional programming, language translation, automata and graph theory, software and systems engineering, concurrent and distributed systems, databases, advanced linear algebra, multiresolution analysis, geometric modeling, and machine learning with optimization. These studies allowed me to develop strong foundations in algorithms, mathematical modeling, and scalable software development, preparing me to address complex problems in computing, data analysis, and high-performance applications.
-                    </p>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <div class="info-bar">
-        <div class="info-inner container">
-            <p class="info-left">📞 +33 6 12 02 53 62</p>
-            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
-            <p class="info-right">🏠 31100 Toulouse, France</p>
-        </div>
-    </div>
+    <!-- Footer avec coordonnées intégrées -->
+    <footer class="bg-primary text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Coordonnées (en haut du footer) -->
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6">
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">📞</span> 
+                    +33 6 12 02 53 62
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">✉️</span> 
+                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:underline">
+                        thomas.canisaresmorere@etu.toulouse-inp.fr
+                    </a>
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">🏠</span> 
+                    31100 Toulouse, France
+                </p>
+            </div>
 
-    <footer class="site-footer">
-        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+            <!-- Copyright centré en bas -->
+            <div class="text-center text-sm opacity-80">
+                © <span id="year"></span> Thomas Canisares--Morère. All rights reserved.
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

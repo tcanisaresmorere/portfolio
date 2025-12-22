@@ -4,87 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport & Other Activities - Thomas Canisares-Morère</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2962FF',
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            }
+          }
+        },
+        darkMode: 'class',  // Important pour ton dark mode existant
+      }
+    </script>
 </head>
-<body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="branding">
-                <div>
-                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
-                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
-                </div>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Script pour appliquer le dark mode dès le chargement -->
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
+            <!-- Branding -->
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
             </div>
-            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+
+            <!-- Bouton Dark Mode -->
+            <button id="dark-mode-toggle" class="text-3xl bg-gray-200 dark:bg-gray-700 rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
+                🌙
+            </button>
         </div>
-        <nav class="nav container">
-            <button class="menu-toggle" aria-label="Open menu">☰</button>
-            <ul>
-                <li><a href="index.html">Welcome</a></li>
-                <li><a href="engineering-course.html">Engineering Course</a></li>
-                <li><a href="international-mobility.html">International Mobility</a></li>
-                <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
-                <li><a href="internships.html">Internships</a></li>
-                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-                <li><a href="sport.html" class="active">Sport & Other Activities</a></li>
+
+        <nav class="max-w-6xl mx-auto px-4 mt-4">
+            <!-- Bouton burger (visible seulement sur mobile) -->
+            <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
+
+            <!-- Liste des liens -->
+            <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 bg-white dark:bg-gray-800 rounded-3xl py-4 px-6 shadow-lg 
+                    md:flex md:items-center 
+                    hidden md:flex
+                    text-gray-800 dark:text-gray-200">
+
+                <li><a href="index.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Welcome</a></li>
+                <li><a href="engineering-course.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Engineering Course</a></li>
+                <li><a href="international-mobility.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Personal Professional Project</a></li>
+                <li><a href="internships.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Internships</a></li>
+                <li><a href="sustainability.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html" class="block px-6 py-3 rounded-full bg-primary text-white font-semibold">Sport & Other Activities</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="course-section">
-            <h2>Sport & Other Activities</h2>
-            <p>Beyond my academic and professional path, I cultivate several passions that contribute to my personal growth, balance, and creativity.</p>
+    <main class="max-w-5xl mx-auto px-4 py-12 md:py-20">
+        <!-- Titre principal -->
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            Sport & Other Activities
+        </h1>
 
-            <div class="course-section">
-                <h3>🥋 Judo & Martial Arts</h3>
-                <p>I have been practicing judo for more than 12 years, which has taught me discipline,
-                perseverance, and respect. More generally, I am passionate about martial arts and combat sports.
-                These practices have helped me develop both physical endurance and mental strength, qualities that
-                I carry into my academic and professional life.
-                </p>
+        <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+            Beyond my academic path, I cultivate several passions that contribute to my personal growth and creativity.
+        </p>
 
-                <p>In the world of judo, I particularly admire Teddy Riner, whose career and mindset
-                are a true source of inspiration for me.
-                </p>
+        <!-- Grille des trois passions -->
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Judo & Martial Arts -->
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-br from-red-600 to-black text-white text-center py-12 text-6xl">
+                    🥋
+                </div>
+                <div class="p-10">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Judo & Martial Arts</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        I have been practicing judo for more than 12 years, which has taught me discipline, perseverance, and respect. More generally, I am passionate about martial arts and combat sports.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
+                        These practices have helped me develop both physical endurance and mental strength.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
+                        In the world of judo, I have admired Teddy Riner since I was young — he was already a dominant figure when I started the sport. David Douillet is also an icon for me, representing French excellence in judo. More recently, I am inspired by the incredible career of Joan-Benjamin Gaba, who is only four years older than me and has already achieved remarkable success at the highest level.
+                    </p>
+                </div>
             </div>
 
-            <div class="course-section">
-                <h3>🎬 Cinema</h3>
-                <p>I also have a great interest in cinema. I appreciate the diversity of genres, from classic films to
-                modern productions, and I enjoy discovering how stories are told through images, sound, and direction.
-                </p>
-
-                <p>Among all sagas, my all-time favorite is Star Wars, which has fascinated me since
-                childhood with its epic storytelling, memorable characters, and vision of a galaxy far, far away.
-                </p>
+            <!-- Science Fiction (cinéma + lecture regroupés) -->
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-br from-purple-700 via-indigo-800 to-orange-700 text-white text-center py-12 text-6xl">
+                    🎬📚
+                </div>
+                <div class="p-10">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Science Fiction</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Since my earliest childhood, I have been passionate about science fiction, a genre that fascinates me through both cinema and literature.  
+                        It allows me to explore imaginative worlds, futuristic concepts, and reflections on society.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
+                        My all-time favorite saga is Star Wars, which has captivated me since I was very young with its epic storytelling, memorable characters, and vision of a galaxy far, far away.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
+                        In literature, the legendary Dune novels by Frank Herbert are my absolute reference — it combines politics, philosophy, ecology, and adventure.
+                    </p>
+                </div>
             </div>
-
-            <div class="course-section">
-                <h3>📚 Reading</h3>
-                <p>Reading is one of my favorite pastimes, particularly in the field of science fiction.
-                This genre allows me to explore imaginative worlds and futuristic ideas, while also reflecting on
-                social and ethical questions relevant to our present and future.
-                </p>
-
-                <p>My favorite books are the legendary Dune novels by Frank Herbert, a saga that
-                masterfully blends politics, philosophy, and adventure.
-                </p>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <div class="info-bar">
-        <div class="info-inner container">
-            <p class="info-left">📞 +33 6 12 02 53 62</p>
-            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
-            <p class="info-right">🏠 31100 Toulouse, France</p>
-        </div>
-    </div>
+    <!-- Footer avec coordonnées intégrées -->
+    <footer class="bg-primary text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Coordonnées (en haut du footer) -->
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6">
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">📞</span> 
+                    +33 6 12 02 53 62
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">✉️</span> 
+                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:underline">
+                        thomas.canisaresmorere@etu.toulouse-inp.fr
+                    </a>
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">🏠</span> 
+                    31100 Toulouse, France
+                </p>
+            </div>
 
-    <footer class="site-footer">
-        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+            <!-- Copyright centré en bas -->
+            <div class="text-center text-sm opacity-80">
+                © <span id="year"></span> Thomas Canisares--Morère. All rights reserved.
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

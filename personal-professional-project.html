@@ -4,140 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Professional Project - Thomas Canisares-Morère</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2962FF',
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            }
+          }
+        },
+        darkMode: 'class',  // Important pour ton dark mode existant
+      }
+    </script>
 </head>
-<body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="branding">
-                <div>
-                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
-                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
-                </div>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Script pour appliquer le dark mode dès le chargement -->
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
+            <!-- Branding -->
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
             </div>
-            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+
+            <!-- Bouton Dark Mode -->
+            <button id="dark-mode-toggle" class="text-3xl bg-gray-200 dark:bg-gray-700 rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
+                🌙
+            </button>
         </div>
-        <nav class="nav container">
-            <button class="menu-toggle" aria-label="Open menu">☰</button>
-            <ul>
-                <li><a href="index.html">Welcome</a></li>
-                <li><a href="engineering-course.html">Engineering Course</a></li>
-                <li><a href="international-mobility.html">International Mobility</a></li>
-                <li><a href="personal-professional-project.html" class="active">Personal Professional Project</a></li>
-                <li><a href="internships.html">Internships</a></li>
-                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-                <li><a href="sport.html">Sport & Other Activities</a></li>
+
+        <nav class="max-w-6xl mx-auto px-4 mt-4">
+            <!-- Bouton burger (visible seulement sur mobile) -->
+            <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
+
+            <!-- Liste des liens -->
+            <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 bg-white dark:bg-gray-800 rounded-3xl py-4 px-6 shadow-lg 
+                    md:flex md:items-center 
+                    hidden md:flex
+                    text-gray-800 dark:text-gray-200">
+
+                <li><a href="index.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Welcome</a></li>
+                <li><a href="engineering-course.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Engineering Course</a></li>
+                <li><a href="international-mobility.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="block px-6 py-3 rounded-full bg-primary text-white font-semibold">Personal Professional Project</a></li>
+                <li><a href="internships.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Internships</a></li>
+                <li><a href="sustainability.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sport & Other Activities</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="course-section">
-            <h2>Personal Professional Project (PPP)</h2>
-            <p>Over time, I've realized that connecting with mentors and engaging with industry professionals 
-            is one of the best ways to stay updated on the job market and its expectations. 
-            To achieve this, I rely on a range of tools and strategies, particularly LinkedIn and 
-            MyJobGlasses, which allow me to reach out to engineers and managers from different sectors.
+    <main class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+        <!-- Titre principal -->
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            Personal Professional Project
+        </h1>
+
+        <!-- Introduction -->
+        <p class="text-xl text-justify text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+            Connecting with professionals is one of the best ways to prepare effectively for entering the job market after my studies.  
+            To do this, I use platforms such as LinkedIn and MyJobGlasses to reach out to engineers and managers working in the transportation sector.
+        </p>
+        <p class="text-lg text-justify text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+            Thanks to MyJobGlasses, I had the opportunity to exchange with professionals from major companies in this field: my internship at TE Connectivity (sensors and connectivity solutions for automotive and heavy vehicles) and discussions with two professionals from Thales in the aeronautics and aerospace domain.  
+            These conversations helped me better understand the daily reality of engineers and the expectations of large industrial groups.
+        </p>
+        <!-- Secteurs d'intérêt -->
+        <section class="mb-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+                Career Interests
+            </h2>
+            <div>
+                <!-- Aéronautique / Transport -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 text-center">
+                    <div class="text-6xl mb-8">✈️</div>
+                    <h3 class="text-2xl font-bold text-primary mb-6">Transportation & Aeronautics</h3>
+                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Aeronautics and aerospace fascinate me because of their technological challenges and contribution to global mobility. The transportation sector has a strong societal impact, combining innovation, safety, and performance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentors -->
+        <section class="mb-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+                Connecting with Mentors
+            </h2>
+            <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                Thanks to MyJobGlasses, I connected with professionals from Thales.
             </p>
 
-            <div class="course-section">
-                <h3>Career Interests</h3>
-                <p>I am open to diverse professional sectors, but two domains particularly stand out for me: 
-                transportation (aeronautics and aerospace included) and finance.  
-                What connects these areas is my strong interest in applied mathematics, 
-                as both offer opportunities to work with algorithms, data, and optimization.
-                </p>
-
-                <p>Aeronautics and aerospace fascinate me because of their technological challenges and their 
-                contribution to global mobility. This is why I first sought to interview professionals working in this sector.  
-                At the same time, the finance industry also attracts me, as it combines mathematical rigor and 
-                advanced computing, particularly in algorithmic trading and risk analysis.
-                </p>
-            </div>
-
-            <div class="course-section">
-                <h3>Connecting with Mentors</h3>
-                <p>Thanks to MyJobGlasses, I was able to connect with professionals from leading companies.  
-                I had the chance to interview Yan Frick (Head of Digital and IS, Thales Flight Line Avionics BU) 
-                and Yohann P. (Engineering Delivery Manager, Thales).  
-                They provided valuable insights into career opportunities, the importance of adaptability, 
-                and the skills sought by major companies in the aeronautics sector.
-                </p>
-
-                <div class="mentor-row">
-                    <div class="mentor-card">
-                        <img src="yan_frick.avif" alt="Yan Frick" class="mentor-photo">
-                        <p class="mentor-name">Yan Frick</p>
-                        <p class="mentor-title">Head of Digital and IS, Thales</p>
-                    </div>
-                    <div class="mentor-card">
-                        <img src="yohann_p.avif" alt="Yohann P." class="mentor-photo">
-                        <p class="mentor-name">Yohann P.</p>
-                        <p class="mentor-title">Engineering Delivery Manager, Thales</p>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Mentor 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 text-center">
+                    <img src="yan_frick.avif" alt="Yan Frick" class="w-48 h-48 mx-auto object-cover rounded-full border-4 border-primary mb-6">
+                    <h3 class="text-2xl font-bold text-primary">Yan Frick</h3>
+                    <p class="text-lg font-semibold text-gray-600 dark:text-gray-400">Head of Digital and IS, Thales Flight Line Avionics BU</p>
                 </div>
-
-                <p>These exchanges were very enriching and helped me better understand both the daily work of engineers 
-                and the expectations of large industrial groups. They also reinforced my motivation to continue developing 
-                my technical expertise and adaptability.
-                </p>
-            </div>
-
-            <div class="course-section">
-                <h3>Transport Industry & Internship Experience</h3>
-                <p>The transportation sector fascinates me, not only because of its technological innovations 
-                but also because of its strong societal impact.  
-                This is one of the reasons I chose to complete my internship at TE Connectivity, 
-                an international leader in connectivity and sensor solutions.
-                </p>
-
-                <div class="image-placeholder">
-                    <img src="TE_logo.png" alt="TE Connectivity Toulouse facility">
-                    <p class="caption">TE Connectivity manufacturing facility in Toulouse</p>
+                <!-- Mentor 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 text-center">
+                    <img src="yohann_p.avif" alt="Yohann P." class="w-48 h-48 mx-auto object-cover rounded-full border-4 border-primary mb-6">
+                    <h3 class="text-2xl font-bold text-primary">Yohann P.</h3>
+                    <p class="text-lg font-semibold text-gray-600 dark:text-gray-400">Engineering Delivery Manager, Thales</p>
                 </div>
-
-                <p>At the Toulouse site, TE Connectivity manufactures a wide range of sensors, including those for 
-                humidity, temperature, viscosity, fluid characteristics (such as oil), and speed measurement.  
-                These applications are essential to ensure the safety, efficiency, and performance of vehicles 
-                and industrial systems.  
-                This internship gave me valuable insights into the transport industry and reinforced my motivation 
-                to contribute to this exciting field.
-                </p>
             </div>
+        </section>
 
-            <div class="course-section">
-                <h3>Deliverables</h3>
-                <p>As part of this PPP, I produced several documents that reflect my research, interviews, and career reflections:</p>
-                <ul class="skills-summary">
-                    <li>CVs and cover letter templates (in French and English)</li>
-                    <li>Mentor interview reports (summaries of exchanges with professionals)</li>
-                    <li>Internship reports and mission summaries</li>
-                    <li>Other relevant documents related to my career exploration</li>
-                    <li>A PowerPoint presentation (5–8 slides) summarizing my PPP, 
-                    which will also serve as a support for an oral presentation.</li>
-                </ul>
-
-                <div class="welcome-buttons">
-                    <a href="assets/cv-fr.pdf" class="btn" download>CV</a>
-                    <a href="assets/cover-letter.pdf" class="btn" download>Cover Letter</a>
-                    <a href="assets/mentor-reports.pdf" class="btn" download>Mentor Reports</a>
-                    <a href="assets/ppp-presentation.pdf" class="btn" download>PPP Presentation</a>
+        <!-- Stage TE Connectivity -->
+        <section class="mb-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+                Transport Industry & Internship Experience
+            </h2>
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden">
+                <div class="bg-gradient-to-r from-primary to-blue-700 text-white py-12 px-8 text-center">
+                    <img src="TE_logo.png" alt="TE Connectivity" class="w-64 mx-auto mb-6">
+                    <p class="text-xl opacity-90">Manufacturing Engineering Intern - Summer 2025</p>
                 </div>
+                <div class="p-10">
+                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
+                        My internship at TE Connectivity (Toulouse site), an international leader in connectivity and sensor solutions, gave me valuable insights into the transport industry. I worked on optimizing manufacturing processes and data analysis, reinforcing my motivation to contribute to this exciting field.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Livrables PPP -->
+        <section class="text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                PPP Deliverables
+            </h2>
+            <p class="text-xl text-justify text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                As part of this PPP, I produced several documents reflecting my research, interviews, and career reflections:
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <a href="assets/cv-fr.pdf" class="bg-primary text-white font-semibold px-8 py-8 rounded-3xl hover:bg-blue-700 transition shadow-2xl flex flex-col items-center gap-4" download>
+                    <div class="text-6xl">📄</div>
+                    <span>CV Français</span>
+                </a>
+                <a href="assets/cv-en.pdf" class="bg-primary text-white font-semibold px-8 py-8 rounded-3xl hover:bg-blue-700 transition shadow-2xl flex flex-col items-center gap-4" download>
+                    <div class="text-6xl">📄</div>
+                    <span>CV English</span>
+                </a>
+                <a href="assets/mentor-reports.pdf" class="bg-primary text-white font-semibold px-8 py-8 rounded-3xl hover:bg-blue-700 transition shadow-2xl flex flex-col items-center gap-4" download>
+                    <div class="text-6xl">📝</div>
+                    <span>Mentor Reports</span>
+                </a>
+                <a href="assets/ppp-presentation.pdf" class="bg-primary text-white font-semibold px-8 py-8 rounded-3xl hover:bg-blue-700 transition shadow-2xl flex flex-col items-center gap-4" download>
+                    <div class="text-6xl">📊</div>
+                    <span>PPP Presentation<br>(6-8 slides)</span>
+                </a>
             </div>
         </section>
     </main>
 
-    <div class="info-bar">
-        <div class="info-inner container">
-            <p class="info-left">📞 +33 6 12 02 53 62</p>
-            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
-            <p class="info-right">🏠 31100 Toulouse, France</p>
-        </div>
-    </div>
+    <!-- Footer avec coordonnées intégrées -->
+    <footer class="bg-primary text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Coordonnées (en haut du footer) -->
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6">
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">📞</span> 
+                    +33 6 12 02 53 62
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">✉️</span> 
+                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:underline">
+                        thomas.canisaresmorere@etu.toulouse-inp.fr
+                    </a>
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">🏠</span> 
+                    31100 Toulouse, France
+                </p>
+            </div>
 
-    <footer class="site-footer">
-        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+            <!-- Copyright centré en bas -->
+            <div class="text-center text-sm opacity-80">
+                © <span id="year"></span> Thomas Canisares--Morère. All rights reserved.
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

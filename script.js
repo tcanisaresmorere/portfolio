@@ -3,21 +3,34 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Menu burger
 const menuToggle = document.querySelector('.menu-toggle');
-const navUl = document.querySelector('.nav ul');
+const navUl = document.querySelector('nav ul');
 
-menuToggle.addEventListener('click', () => {
-    navUl.classList.toggle('show');
-});
+if (menuToggle && navUl) {
+    menuToggle.addEventListener('click', () => {
+        navUl.classList.toggle('hidden');
+        menuToggle.textContent = navUl.classList.contains('hidden') ? '☰' : '✖';
+    });
+}
 
 // Dark mode toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
-const body = document.body;
 
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    if (body.classList.contains('dark-mode')) {
-        darkModeToggle.textContent = '☀️'; // Switch to light icon
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+            darkModeToggle.textContent = '☀️';
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            darkModeToggle.textContent = '🌙';
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+
+    // Met à jour l'icône au chargement (au cas où)
+    if (document.documentElement.classList.contains('dark')) {
+        darkModeToggle.textContent = '☀️';
     } else {
-        darkModeToggle.textContent = '🌙'; // Back to dark icon
+        darkModeToggle.textContent = '🌙';
     }
-});
+}

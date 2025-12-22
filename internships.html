@@ -4,88 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internships - Thomas Canisares-Morère</title>
-    <link rel="stylesheet" href="styles.css">
+    <!--  <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2962FF',
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            }
+          }
+        },
+        darkMode: 'class',  // Important pour ton dark mode existant
+      }
+    </script>
 </head>
-<body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="branding">
-                <div>
-                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
-                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
-                </div>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Script pour appliquer le dark mode dès le chargement -->
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
+            <!-- Branding -->
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
             </div>
-            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+
+            <!-- Bouton Dark Mode -->
+            <button id="dark-mode-toggle" class="text-3xl bg-gray-200 dark:bg-gray-700 rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
+                🌙
+            </button>
         </div>
-        <nav class="nav container">
-            <button class="menu-toggle" aria-label="Open menu">☰</button>
-            <ul>
-                <li><a href="index.html">Welcome</a></li>
-                <li><a href="engineering-course.html">Engineering Course</a></li>
-                <li><a href="international-mobility.html">International Mobility</a></li>
-                <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
-                <li><a href="internships.html" class="active">Internships</a></li>
-                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-                <li><a href="sport.html">Sport & Other Activities</a></li>
+
+        <nav class="max-w-6xl mx-auto px-4 mt-4">
+            <!-- Bouton burger (visible seulement sur mobile) -->
+            <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
+
+            <!-- Liste des liens -->
+            <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 bg-white dark:bg-gray-800 rounded-3xl py-4 px-6 shadow-lg 
+                    md:flex md:items-center 
+                    hidden md:flex
+                    text-gray-800 dark:text-gray-200">
+
+                <li><a href="index.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Welcome</a></li>
+                <li><a href="engineering-course.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Engineering Course</a></li>
+                <li><a href="international-mobility.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Personal Professional Project</a></li>
+                <li><a href="internships.html" class="block px-6 py-3 rounded-full bg-primary text-white font-semibold">Internships</a></li>
+                <li><a href="sustainability.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sport & Other Activities</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="course-section">
-            <h2>Internships</h2>
-            <p class="intro-text">This section highlights my practical experience in the professional world. Through internships, I have had the opportunity to apply the theoretical knowledge gained during my engineering studies to real-world challenges. Here, I present the projects I have contributed to, the technical skills I developed, and the problem-solving approaches I applied. Each experience has allowed me to deepen my expertise in data analysis, software development, and industrial processes, while gaining insight into professional practices and teamwork.</p>
-        </section>
+    <main class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+        <!-- Titre principal -->
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            Internships
+        </h1>
 
-        <section class="internship-entry">
-            <h3>Manufacturing Engineering Intern</h3>
-            <h4>TE Connectivity, France | Summer 2025 (2 months)</h4>
-            
-            <div class="te-section">
-                <img src="TE_logo.png" alt="TE Connectivity logo" class="company-logo">
-                <div>
-                    <p>During the summer between my first and second year at ENSEEIHT (Toulouse INP), I joined the Manufacturing Engineering team at TE Connectivity. My primary goal was to minimize false rejects on the HTGB machine, which uses an Automated Optical Inspection (AOI) camera, while also reducing overall rejects. The machine applies tin solder to PCBs (soldering 3 pins per board) and deposits silicone around the perimeter—though my focus was solely on the soldering process.</p>
-                    
-                    <p>Data collection was a key challenge: Soldering parameters (9 in total: 3 surfaces, 3 heights, 3 volumes) and the Flex Status were stored in a CSV file on the production line workstation. Meanwhile, around 40 other parameters were sent via PLC to a separate database. I unified all this data into a single table for streamlined analysis.</p>
+        <!-- Introduction -->
+        <p class="text-xl text-justify text-center text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-20 leading-relaxed">
+            This section highlights my practical experience in the professional world. Through internships, I have had the opportunity to apply the theoretical knowledge gained during my engineering studies. Here, I present the projects I have contributed to, the technical skills I developed, and the problem-solving approaches I applied. Each experience has allowed me to deepen my expertise in data analysis, software development, and industrial processes, while gaining insight into teamwork.
+        </p>
+
+        <!-- Stage TE Connectivity -->
+        <section class="mb-20">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden">
+                <!-- En-tête avec logo et titre -->
+                <div class="bg-gradient-to-r from-primary to-blue-700 text-white py-10 px-8 text-center">
+                    <img src="TE_logo.png" alt="TE Connectivity logo" class="w-48 mx-auto mb-6">
+                    <h2 class="text-2xl md:text-3xl font-bold">Manufacturing Engineering Intern</h2>
+                    <p class="text-xl mt-2 opacity-90">TE Connectivity, France | Summer 2025 (2 months)</p>
+                </div>
+
+                <!-- Contenu principal -->
+                <div class="p-10 md:p-16">
+                    <!-- Description du stage -->
+                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        During the summer between my first and second year at ENSEEIHT, I completed a two-month internship within the Manufacturing Engineering team at TE Connectivity's Toulouse site.  
+                        The team was led by Pascal Boussioux, and I was directly supervised by Hélène Choteau, who oversees the process engineering aspects, and Sarah Albert, soldering specialist and member of the ME team.
+                    </p>
+                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        My primary mission was to minimize false rejects on the HTGB machine, which uses an Automated Optical Inspection (AOI) camera, while also contributing to reducing overall rejects.  
+                        The machine applies tin solder to PCBs (soldering 3 pins per board) and deposits silicone around the perimeter—though my focus was solely on the soldering process.
+                    </p>
+                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-10">
+                        Data collection was a key challenge: Soldering parameters (9 in total: 3 surfaces, 3 heights, 3 volumes) and the Flex Status were stored in a CSV file on the production line workstation. Meanwhile, around 40 other parameters were sent to a separate database. I unified all this data into a single table for analysis.
+                    </p>
+
+                    <!-- Scripts et visualisations Python -->
+                    <h3 class="text-2xl font-bold text-primary mb-6">Data Analysis & Visualization</h3>
+                    <!-- Image du site -->
+                    <div class="text-center my-12">
+                        <img src="result_stage.jpg" alt="TE Connectivity manufacturing facility in Toulouse" class="max-w-full md:max-w-3xl mx-auto rounded-2xl shadow-xl">
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4 italic">Use of the OC-SVM method for visualizing and detecting false rejections.</p>
+                    </div>
+
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+                        In parallel, I developed Python scripts for data exploration and visualization to identify patterns in false rejects. Key scripts included:
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <ul class="space-y-4 text-lg text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Box plots for parameter distribution analysis.</li>
+                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Histograms and density plots, with calculations for basic statistics (mean, 3-sigma/6-sigma thresholds) and process capabilities (Cp and Cpk).</li>
+                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Control charts to monitor process stability.</li>
+                        </ul>
+                        <ul class="space-y-4 text-lg text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> 2D scatter plots correlating surface vs. height, height vs. volume, and volume vs. surface.</li>
+                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Advanced statistical modeling with PCA and One-Class SVM clustering.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Conclusion -->
+                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Working alongside experts, I gained deep insights into process engineering and soldering. This internship strengthened my Python and SQL programming skills, and introduced me to AOI cameras and their capabilities.
+                    </p>
                 </div>
             </div>
-
-            <p>In parallel, I developed Python scripts for data exploration and visualization to identify patterns in false rejects. Key scripts included:</p>
-            <ul class="skills-summary">
-                <li>Box plots for parameter distribution analysis.</li>
-                <li>Histograms and density plots, with calculations for basic statistics (mean, standard deviation, 3-sigma/6-sigma thresholds) and process capabilities (Cp and Cpk).</li>
-                <li>Control charts to monitor process stability.</li>
-                <li>2D scatter plots correlating surface vs. height, height vs. volume, and volume vs. surface.</li>
-            </ul>
-
-            <p>I also explored JMP software for statistical analysis, used by the Process team. To pinpoint causes of false rejects, I created a Python tool for 2D graphical visualization of 11 key parameters. This involved Principal Component Analysis (PCA) on soldering parameters, RFID shuttle numbers, and PCB suppliers, followed by clustering with One-Class Support Vector Machines (SVM). Daily, I reviewed false reject parts from operators and AOI camera images to refine the model. With a larger dataset, this could evolve into an automated false reject detection system for the HTGB AOI.</p>
-
-            <p>Working alongside experts like Hélène Choteau and Sarah Albert, I gained deep insights into process engineering and soldering. This internship strengthened my Python and SQL programming skills, introduced me to AOI cameras and their capabilities, and emphasized data-driven manufacturing improvements.</p>
         </section>
 
-        <section class="course-section">
-            <h3>Key Skills Developed Across Internships</h3>
-            <ul class="skills-summary">
-                <li>Data unification and analysis (Python, SQL, JMP).</li>
-                <li>Statistical modeling (PCA, SVM clustering).</li>
-                <li>Process optimization in manufacturing environments.</li>
-                <li>Visualization tools for industrial data (box plots, control charts).</li>
-                <li>Collaboration with cross-functional teams.</li>
-            </ul>
+        <!-- Compétences clés -->
+        <section class="text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-12">
+                Key Skills Developed
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                    <p class="text-lg font-semibold text-primary mb-4">Data unification and analysis</p>
+                    <p class="text-gray-600 dark:text-gray-400">(Python, SQL, JMP)</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                    <p class="text-lg font-semibold text-primary mb-4">Statistical modeling</p>
+                    <p class="text-gray-600 dark:text-gray-400">(PCA, SVM clustering)</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                    <p class="text-lg font-semibold text-primary mb-4">Process optimization</p>
+                    <p class="text-gray-600 dark:text-gray-400">in manufacturing environments</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                    <p class="text-lg font-semibold text-primary mb-4">Visualization tools</p>
+                    <p class="text-gray-600 dark:text-gray-400">for industrial data</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                    <p class="text-lg font-semibold text-primary mb-4">Collaboration</p>
+                    <p class="text-gray-600 dark:text-gray-400">with cross-functional teams</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <div class="info-bar">
-        <div class="info-inner container">
-            <p class="info-left">📞 +33 6 12 02 53 62</p>
-            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
-            <p class="info-right">🏠 31100 Toulouse, France</p>
-        </div>
-    </div>
+    <!-- Footer avec coordonnées intégrées -->
+    <footer class="bg-primary text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Coordonnées (en haut du footer) -->
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6">
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">📞</span> 
+                    +33 6 12 02 53 62
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">✉️</span> 
+                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:underline">
+                        thomas.canisaresmorere@etu.toulouse-inp.fr
+                    </a>
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">🏠</span> 
+                    31100 Toulouse, France
+                </p>
+            </div>
 
-    <footer class="site-footer">
-        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+            <!-- Copyright centré en bas -->
+            <div class="text-center text-sm opacity-80">
+                © <span id="year"></span> Thomas Canisares--Morère. All rights reserved.
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

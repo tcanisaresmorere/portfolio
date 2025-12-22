@@ -4,81 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>International Mobility - Thomas Canisares-Morère</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2962FF',
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            }
+          }
+        },
+        darkMode: 'class',  // Important pour ton dark mode existant
+      }
+    </script>
 </head>
-<body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="branding">
-                <div>
-                    <h1 class="welcome-name">Thomas Canisares-Morère</h1>
-                    <p class="welcome-tagline">Engineering student in HPC & Big Data</p>
-                </div>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Script pour appliquer le dark mode dès le chargement -->
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
+            <!-- Branding -->
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
             </div>
-            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+
+            <!-- Bouton Dark Mode -->
+            <button id="dark-mode-toggle" class="text-3xl bg-gray-200 dark:bg-gray-700 rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
+                🌙
+            </button>
         </div>
-        <nav class="nav container">
-            <button class="menu-toggle" aria-label="Open menu">☰</button>
-            <ul>
-                <li><a href="index.html">Welcome</a></li>
-                <li><a href="engineering-course.html">Engineering Course</a></li>
-                <li><a href="international-mobility.html" class="active">International Mobility</a></li>
-                <li><a href="personal-professional-project.html">Personal Professional Project</a></li>
-                <li><a href="internships.html">Internships</a></li>
-                <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
-                <li><a href="sport.html">Sport & Other Activities</a></li>
+
+        <nav class="max-w-6xl mx-auto px-4 mt-4">
+            <!-- Bouton burger (visible seulement sur mobile) -->
+            <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
+
+            <!-- Liste des liens -->
+            <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 bg-white dark:bg-gray-800 rounded-3xl py-4 px-6 shadow-lg 
+                    md:flex md:items-center 
+                    hidden md:flex
+                    text-gray-800 dark:text-gray-200">
+
+                <li><a href="index.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Welcome</a></li>
+                <li><a href="engineering-course.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Engineering Course</a></li>
+                <li><a href="international-mobility.html" class="block px-6 py-3 rounded-full bg-primary text-white font-semibold">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Personal Professional Project</a></li>
+                <li><a href="internships.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Internships</a></li>
+                <li><a href="sustainability.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sustainability & Civic Engagement</a></li>
+                <li><a href="sport.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sport & Other Activities</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="course-section">
-            <h2>International Mobility</h2>
-            <p>Traveling has played an important role in my education, as it allowed me to experience new cultures, 
-            practice foreign languages, and broaden my perspective of the world.  
-            Here are some of the destinations I've had the chance to explore:</p>
+    <main class="max-w-5xl mx-auto px-4 py-12 md:py-20">
+        <!-- Titre principal -->
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            International Mobility
+        </h1>
 
-            <div class="course-section">
-                <h3>🇬🇧 England</h3>
-                <p>I visited part of southern England, including London and Stonehenge, 
-                as part of a language trip. I lived with local people, which gave me the opportunity 
-                to improve my English and discover British culture from the inside.
-                </p>
+        <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-16 leading-relaxed">
+            Traveling has played an important role in my education, as it allowed me to practice foreign languages, and broaden my perspective of the world.  
+            Here are some of the destinations I've had the chance to explore:
+        </p>
+
+        <!-- Grille des pays -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Angleterre -->
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-br from-blue-500 to-red-600 text-white text-center py-8 text-6xl">
+                    🇬🇧
+                </div>
+                <div class="p-10">
+                    <h3 class="text-2xl font-bold text-primary mb-6">England</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        During my middle school years, I participated in a language immersion trip to southern England.  
+                        I stayed with a local host couple and was accompanied by two classmates.  
+                        This experience allowed me to improve my English while discovering England from the inside.
+                    </p>
+                </div>
             </div>
 
-            <div class="course-section">
-                <h3>🇪🇸 Spain</h3>
-                <p>I have traveled to Spain several times and discovered different regions of this beautiful country.  
-                I visited Girona twice, a city I really enjoyed.  
-                I also went to Valencia, where I explored the impressive City of Arts and Sciences.  
-                With my family, I discovered Asturias, especially Gijón and its surroundings.  
-                Finally, we traveled down to Salamanca, where I was able to practice speaking Spanish 
-                with locals, which was a very rewarding experience.
-                </p>
+            <!-- Espagne -->
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-br from-red-600 to-yellow-500 text-white text-center py-8 text-6xl">
+                    🇪🇸
+                </div>
+                <div class="p-10">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Spain</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        I have traveled to Spain several times and discovered different regions of this beautiful country.  
+                        I visited Girona twice, a city I really enjoyed.  
+                        I also went to Valencia, where I explored the impressive City of Arts and Sciences.  
+                        With my family, I discovered Asturias, especially Gijón and its surroundings.  
+                        Finally, we traveled to Salamanca.
+                    </p>
+                </div>
             </div>
 
-            <div class="course-section">
-                <h3>🇮🇹 Italy</h3>
-                <p>With my family, I was lucky enough to visit different regions of Italy: 
-                the Cinque Terre (Five Lands), Florence, and Pisa.  
-                This trip was full of discoveries, from history and architecture to food and culture.  
-                I learned so much, and I am sure I will never forget this experience.
-                </p>
+            <!-- Italie -->
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-br from-green-600 to-red-600 text-white text-center py-8 text-6xl">
+                    🇮🇹
+                </div>
+                <div class="p-10">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Italy</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        With my family, I was lucky enough to visit different regions of Italy: 
+                        the Five Lands, Florence and Pisa.  
+                        This trip was full of discoveries, from history and architecture to food and culture.  
+                        I learned so much, and I am sure I will never forget this experience.
+                    </p>
+                </div>
             </div>
+        </div>
+
+        <!-- Section Mobilité internationale prévue -->
+        <section class="mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+                Planned International Mobility: Semester 9
+            </h2>
+
+            <p class="text-xl text-justify text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                As part of my engineering curriculum at ENSEEIHT, I plan to complete a full semester abroad.  
+                This mobility is a key component of my personal and professional development: it will allow me to significantly improve my English — an essential skill for my future career as an engineer.
+            </p>
+
+            <!-- Grille des 3 destinations (même style que les pays visités) -->
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Vœu 1 : Norvège -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-gradient-to-br from-red-600 to-blue-600 text-white text-center py-12 text-6xl">
+                        🇳🇴
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold text-primary mb-6">1st Choice: Norway</h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                            I am particularly attracted to Norway for its breathtaking landscapes, unique climate, and the rich, innovative culture of Scandinavian countries.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vœu 2 : Canada (Montréal) -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-gradient-to-br from-red-700 to-red-200 text-white text-center py-12 text-6xl">
+                        🇨🇦
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold text-primary mb-6">2nd Choice: Canada</h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Polytechnique Montréal is a highly renowned institution. The Quebec region has always fascinated me, both culturally and academically.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vœu 3 : Irlande (Dublin) -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-gradient-to-br from-green-600 to-orange-600 text-white text-center py-12 text-6xl">
+                        🇮🇪
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold text-primary mb-6">3rd Choice: Ireland</h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Studying in Dublin would offer full immersion in an English-speaking environment, ideal for perfecting my language skills in a professional and daily context.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Common Goals pleine largeur en bas -->
+            <div class="bg-gradient-to-br from-primary to-blue-700 text-white rounded-3xl shadow-2xl overflow-hidden max-w-5xl mx-auto">
+                <div class="text-center py-6 text-6xl">
+                    🎯
+                </div>
+                <div class="px-10 pb-12">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Common Goals</h3>
+                    <p class="text-lg text-justify leading-relaxed text-center max-w-4xl mx-auto">
+                        All three destinations offer prestigious partner universities with strong programs in HPC & Big Data, allowing me to deepen my specialization with courses and approaches complementary to those at ENSEEIHT.
+                    </p>
+                </div>
+            </div>
+
+            <p class="text-lg text-center text-gray-600 dark:text-gray-400 mt-12 italic max-w-4xl mx-auto">
+                Applications have already been submitted for these exchange programs.
+            </p>
         </section>
     </main>
 
-    <div class="info-bar">
-        <div class="info-inner container">
-            <p class="info-left">📞 +33 6 12 02 53 62</p>
-            <p class="info-center">✉️ t.canisares.morere@gmail.com</p>
-            <p class="info-right">🏠 31100 Toulouse, France</p>
-        </div>
-    </div>
+    <!-- Footer avec coordonnées intégrées -->
+    <footer class="bg-primary text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Coordonnées (en haut du footer) -->
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6">
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">📞</span> 
+                    +33 6 12 02 53 62
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">✉️</span> 
+                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:underline">
+                        thomas.canisaresmorere@etu.toulouse-inp.fr
+                    </a>
+                </p>
+                <p class="text-lg flex items-center gap-3">
+                    <span class="font-bold">🏠</span> 
+                    31100 Toulouse, France
+                </p>
+            </div>
 
-    <footer class="site-footer">
-        <p>© <span id="year"></span> Thomas Canisares-Morère</p>
+            <!-- Copyright centré en bas -->
+            <div class="text-center text-sm opacity-80">
+                © <span id="year"></span> Thomas Canisares--Morère. All rights reserved.
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
