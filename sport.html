@@ -66,58 +66,63 @@
         </nav>
     </header>
 
-    <main class="w-full -mt-40">
+    <main class="w-full">
         <!-- Bande titre avec background statistics -->
-        <div class="bg-no-repeat bg-center h-screen flex items-center" style="background-image: url('statistics_background.png');">
-            <div class="max-w-5xl mx-auto">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+        <div class="relative bg-cover bg-center bg-no-repeat w-full flex items-center justify-center" style="background-image: url('statistics_background.png'); height: 60vh; min-height: 400px;">
+            <!-- Titre centré -->
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl leading-tight">
                     Sport & Other Activities
                 </h1>
             </div>
         </div>
 
-        <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-7xl mx-auto mb-12 leading-relaxed -mt-20">
-            Beyond my academic path, I cultivate several passions that contribute to my personal growth and creativity.
-        </p>
+        <div class="relative bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-7xl mx-auto mb-12 leading-relaxed">
+                    Beyond my academic path, I cultivate several passions that contribute to my personal growth and creativity.
+                </p>
 
-        <!-- Grille des trois passions -->
-        <div class="grid md:grid-cols-2 max-w-7xl mx-auto gap-12">
-            <!-- Judo & Martial Arts -->
-            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                <div class="bg-gradient-to-br from-red-600 to-black text-white text-center py-12 text-6xl">
-                    🥋
-                </div>
-                <div class="p-10">
-                    <h2 class="text-3xl font-bold text-primary mb-6">Judo & Martial Arts</h2>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                        I have been practicing judo for more than 12 years, which has taught me discipline, perseverance, and respect. More generally, I am passionate about martial arts and combat sports.
-                    </p>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
-                        These practices have helped me develop both physical endurance and mental strength.
-                    </p>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
-                        In the world of judo, I have admired Teddy Riner since I was young — he was already a dominant figure when I started the sport. David Douillet is also an icon for me, representing French excellence in judo. More recently, I am inspired by the incredible career of Joan-Benjamin Gaba, who is only four years older than me and has already achieved remarkable success at the highest level.
-                    </p>
-                </div>
-            </div>
+                <!-- Grille des trois passions -->
+                <div class="grid md:grid-cols-2 max-w-7xl mx-auto gap-12">
+                    <!-- Judo & Martial Arts -->
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                        <div class="bg-gradient-to-br from-red-600 to-black text-white text-center py-12 text-6xl">
+                            🥋
+                        </div>
+                        <div class="p-10">
+                            <h2 class="text-3xl font-bold text-primary mb-6">Judo & Martial Arts</h2>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                I have been practicing judo for more than 12 years, which has taught me discipline, perseverance, and respect. More generally, I am passionate about martial arts and combat sports.
+                            </p>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
+                                These practices have helped me develop both physical endurance and mental strength.
+                            </p>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
+                                In the world of judo, I have admired Teddy Riner since I was young — he was already a dominant figure when I started the sport. David Douillet is also an icon for me, representing French excellence in judo. More recently, I am inspired by the incredible career of Joan-Benjamin Gaba, who is only four years older than me and has already achieved remarkable success at the highest level.
+                            </p>
+                        </div>
+                    </div>
 
-            <!-- Science Fiction (cinéma + lecture regroupés) -->
-            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                <div class="bg-gradient-to-br from-purple-700 via-indigo-800 to-orange-700 text-white text-center py-12 text-6xl">
-                    🎬📚
-                </div>
-                <div class="p-10">
-                    <h2 class="text-3xl font-bold text-primary mb-6">Science Fiction</h2>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                        Since my earliest childhood, I have been passionate about science fiction, a genre that fascinates me through both cinema and literature.  
-                        It allows me to explore imaginative worlds, futuristic concepts, and reflections on society.
-                    </p>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
-                        My all-time favorite saga is Star Wars, which has captivated me since I was very young with its epic storytelling, memorable characters, and vision of a galaxy far, far away.
-                    </p>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
-                        In literature, the legendary Dune novels by Frank Herbert are my absolute reference — it combines politics, philosophy, ecology, and adventure.
-                    </p>
+                    <!-- Science Fiction (cinéma + lecture regroupés) -->
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                        <div class="bg-gradient-to-br from-purple-700 via-indigo-800 to-orange-700 text-white text-center py-12 text-6xl">
+                            🎬📚
+                        </div>
+                        <div class="p-10">
+                            <h2 class="text-3xl font-bold text-primary mb-6">Science Fiction</h2>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Since my earliest childhood, I have been passionate about science fiction, a genre that fascinates me through both cinema and literature.  
+                                It allows me to explore imaginative worlds, futuristic concepts, and reflections on society.
+                            </p>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
+                                My all-time favorite saga is Star Wars, which has captivated me since I was very young with its epic storytelling, memorable characters, and vision of a galaxy far, far away.
+                            </p>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
+                                In literature, the legendary Dune novels by Frank Herbert are my absolute reference — it combines politics, philosophy, ecology, and adventure.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

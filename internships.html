@@ -66,108 +66,114 @@
         </nav>
     </header>
 
-    <main class="w-full -mt-40">
+    <main class="w-full">
         <!-- Bande titre avec background statistics -->
-        <div class="bg-no-repeat bg-center h-screen flex items-center" style="background-image: url('statistics_background.png');">
-            <div class="max-w-5xl mx-auto">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+        <div class="relative bg-cover bg-center bg-no-repeat w-full flex items-center justify-center" style="background-image: url('statistics_background.png'); height: 60vh; min-height: 400px;">
+            <!-- Titre centré -->
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl leading-tight">
                     Internships
                 </h1>
             </div>
         </div>
 
-        <!-- Introduction -->
-        <p class="text-xl text-justify text-center text-gray-700 dark:text-gray-300 max-w-6xl mx-auto mb-20 leading-relaxed -mt-20">
-            This section highlights my practical experience in the professional world. Through internships, I have had the opportunity to apply the theoretical knowledge gained during my engineering studies. Here, I present the projects I have contributed to, the technical skills I developed, and the problem-solving approaches I applied. Each experience has allowed me to deepen my expertise in data analysis, software development, and industrial processes, while gaining insight into teamwork.
-        </p>
+        <!-- Contenu principal (timeline, etc.) -->
+        <div class="relative bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <!-- Introduction -->
+                <p class="text-xl text-justify text-center text-gray-700 dark:text-gray-300 max-w-6xl mx-auto mb-20 leading-relaxed">
+                    This section highlights my practical experience in the professional world. Through internships, I have had the opportunity to apply the theoretical knowledge gained during my engineering studies. Here, I present the projects I have contributed to, the technical skills I developed, and the problem-solving approaches I applied. Each experience has allowed me to deepen my expertise in data analysis, software development, and industrial processes, while gaining insight into teamwork.
+                </p>
 
-        <!-- Stage TE Connectivity -->
-        <section class="mb-20">
-            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl">
-                <!-- En-tête avec logo et titre -->
-                <div class="relative bg-white dark:bg-gray-800 shadow-2xl overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('lines_background.svg');">
-                    <div class="relative z-10 p-10 md:p-16 text-center">
-                        <img src="TE_logo.png" alt="TE Connectivity logo" class="w-48 mx-auto mb-6">
-                        <h2 class="text-2xl font-bold text-primary mb-6">Manufacturing Engineering Intern - Summer 2025</h2>
-                        <p class="text-lg text-center text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">TE Connectivity, France | Summer 2025 (2 months)</p>
+                <!-- Stage TE Connectivity -->
+                <section class="mb-20">
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl">
+                        <!-- En-tête avec logo et titre -->
+                        <div class="relative bg-white dark:bg-gray-800 shadow-2xl overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('lines_background.svg');">
+                            <div class="relative z-10 p-10 md:p-16 text-center">
+                                <img src="TE_logo.png" alt="TE Connectivity logo" class="w-48 mx-auto mb-6">
+                                <h2 class="text-2xl font-bold text-primary mb-6">Manufacturing Engineering Intern - Summer 2025</h2>
+                                <p class="text-lg text-center text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">TE Connectivity, France | Summer 2025 (2 months)</p>
+                            </div>
+                        </div>
+
+                        <!-- Contenu principal -->
+                        <div class="mt-12 max-w-6xl mx-auto mb-20">
+                            <!-- Description du stage -->
+                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                                During the summer between my first and second year at ENSEEIHT, I completed a two-month internship within the Manufacturing Engineering team at TE Connectivity's Toulouse site.  
+                                The team was led by Pascal Boussioux, and I was directly supervised by Hélène Choteau, who oversees the process engineering aspects, and Sarah Albert, soldering specialist and member of the ME team.
+                            </p>
+                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                                My primary mission was to minimize false rejects on the HTGB machine, which uses an Automated Optical Inspection (AOI) camera, while also contributing to reducing overall rejects.  
+                                The machine applies tin solder to PCBs (soldering 3 pins per board) and deposits silicone around the perimeter—though my focus was solely on the soldering process.
+                            </p>
+                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-10">
+                                Data collection was a key challenge: Soldering parameters (9 in total: 3 surfaces, 3 heights, 3 volumes) and the Flex Status were stored in a CSV file on the production line workstation. Meanwhile, around 40 other parameters were sent to a separate database. I unified all this data into a single table for analysis.
+                            </p>
+
+                            <!-- Scripts et visualisations Python -->
+                            <h3 class="text-2xl font-bold text-primary mb-6">Data Analysis & Visualization</h3>
+                            <!-- Image du site -->
+                            <div class="text-center my-12">
+                                <img src="result_stage.jpg" alt="TE Connectivity manufacturing facility in Toulouse" class="max-w-4xl mx-auto rounded-2xl shadow-xl">
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-4 italic">Use of the OC-SVM method for visualizing and detecting false rejections.</p>
+                            </div>
+
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+                                In parallel, I developed Python scripts for data exploration and visualization to identify patterns in false rejects. Key scripts included:
+                            </p>
+
+                            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                                <ul class="space-y-4 text-lg text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Box plots for parameter distribution analysis.</li>
+                                    <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Histograms and density plots, with calculations for basic statistics (mean, 3-sigma/6-sigma thresholds) and process capabilities (Cp and Cpk).</li>
+                                    <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Control charts to monitor process stability.</li>
+                                </ul>
+                                <ul class="space-y-4 text-lg text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> 2D scatter plots correlating surface vs. height, height vs. volume, and volume vs. surface.</li>
+                                    <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Advanced statistical modeling with PCA and One-Class SVM clustering.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Conclusion -->
+                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed py-8">
+                                Working alongside experts, I gained deep insights into process engineering and soldering. This internship strengthened my Python and SQL programming skills, and introduced me to AOI cameras and their capabilities.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- Contenu principal -->
-                <div class="mt-12 max-w-6xl mx-auto mb-20">
-                    <!-- Description du stage -->
-                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        During the summer between my first and second year at ENSEEIHT, I completed a two-month internship within the Manufacturing Engineering team at TE Connectivity's Toulouse site.  
-                        The team was led by Pascal Boussioux, and I was directly supervised by Hélène Choteau, who oversees the process engineering aspects, and Sarah Albert, soldering specialist and member of the ME team.
-                    </p>
-                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        My primary mission was to minimize false rejects on the HTGB machine, which uses an Automated Optical Inspection (AOI) camera, while also contributing to reducing overall rejects.  
-                        The machine applies tin solder to PCBs (soldering 3 pins per board) and deposits silicone around the perimeter—though my focus was solely on the soldering process.
-                    </p>
-                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed mb-10">
-                        Data collection was a key challenge: Soldering parameters (9 in total: 3 surfaces, 3 heights, 3 volumes) and the Flex Status were stored in a CSV file on the production line workstation. Meanwhile, around 40 other parameters were sent to a separate database. I unified all this data into a single table for analysis.
-                    </p>
-
-                    <!-- Scripts et visualisations Python -->
-                    <h3 class="text-2xl font-bold text-primary mb-6">Data Analysis & Visualization</h3>
-                    <!-- Image du site -->
-                    <div class="text-center my-12">
-                        <img src="result_stage.jpg" alt="TE Connectivity manufacturing facility in Toulouse" class="max-w-4xl mx-auto rounded-2xl shadow-xl">
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4 italic">Use of the OC-SVM method for visualizing and detecting false rejections.</p>
+                <!-- Compétences clés -->
+                <section class="text-center max-w-5xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-12">
+                        Key Skills Developed
+                    </h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <p class="text-lg font-semibold text-primary mb-4">Data unification and analysis</p>
+                            <p class="text-gray-600 dark:text-gray-400">(Python, SQL, JMP)</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <p class="text-lg font-semibold text-primary mb-4">Statistical modeling</p>
+                            <p class="text-gray-600 dark:text-gray-400">(PCA, SVM clustering)</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <p class="text-lg font-semibold text-primary mb-4">Process optimization</p>
+                            <p class="text-gray-600 dark:text-gray-400">in manufacturing environments</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <p class="text-lg font-semibold text-primary mb-4">Visualization tools</p>
+                            <p class="text-gray-600 dark:text-gray-400">for industrial data</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                            <p class="text-lg font-semibold text-primary mb-4">Collaboration</p>
+                            <p class="text-gray-600 dark:text-gray-400">with cross-functional teams</p>
+                        </div>
                     </div>
-
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                        In parallel, I developed Python scripts for data exploration and visualization to identify patterns in false rejects. Key scripts included:
-                    </p>
-
-                    <div class="grid md:grid-cols-2 gap-8 mb-12">
-                        <ul class="space-y-4 text-lg text-gray-700 dark:text-gray-300">
-                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Box plots for parameter distribution analysis.</li>
-                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Histograms and density plots, with calculations for basic statistics (mean, 3-sigma/6-sigma thresholds) and process capabilities (Cp and Cpk).</li>
-                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Control charts to monitor process stability.</li>
-                        </ul>
-                        <ul class="space-y-4 text-lg text-gray-700 dark:text-gray-300">
-                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> 2D scatter plots correlating surface vs. height, height vs. volume, and volume vs. surface.</li>
-                            <li class="flex items-start gap-3"><span class="text-primary font-bold">•</span> Advanced statistical modeling with PCA and One-Class SVM clustering.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Conclusion -->
-                    <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed py-8">
-                        Working alongside experts, I gained deep insights into process engineering and soldering. This internship strengthened my Python and SQL programming skills, and introduced me to AOI cameras and their capabilities.
-                    </p>
-                </div>
+                </section>
             </div>
-        </section>
-
-        <!-- Compétences clés -->
-        <section class="text-center max-w-5xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-12">
-                Key Skills Developed
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                    <p class="text-lg font-semibold text-primary mb-4">Data unification and analysis</p>
-                    <p class="text-gray-600 dark:text-gray-400">(Python, SQL, JMP)</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                    <p class="text-lg font-semibold text-primary mb-4">Statistical modeling</p>
-                    <p class="text-gray-600 dark:text-gray-400">(PCA, SVM clustering)</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                    <p class="text-lg font-semibold text-primary mb-4">Process optimization</p>
-                    <p class="text-gray-600 dark:text-gray-400">in manufacturing environments</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                    <p class="text-lg font-semibold text-primary mb-4">Visualization tools</p>
-                    <p class="text-gray-600 dark:text-gray-400">for industrial data</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                    <p class="text-lg font-semibold text-primary mb-4">Collaboration</p>
-                    <p class="text-gray-600 dark:text-gray-400">with cross-functional teams</p>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer avec background flux -->

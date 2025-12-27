@@ -66,141 +66,146 @@
         </nav>
     </header>
 
-    <main class="w-full -mt-40">
+    <main class="w-full">
         <!-- Bande titre avec background statistics -->
-        <div class="bg-no-repeat bg-center h-screen flex items-center" style="background-image: url('statistics_background.png');">
-            <div class="max-w-5xl mx-auto">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+        <div class="relative bg-cover bg-center bg-no-repeat w-full flex items-center justify-center" style="background-image: url('statistics_background.png'); height: 60vh; min-height: 400px;">
+            <!-- Titre centré -->
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl leading-tight">
                     International Mobility
                 </h1>
             </div>
         </div>
 
-        <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-16 leading-relaxed -mt-20">
-            Traveling has played an important role in my education, as it allowed me to practice foreign languages, and broaden my perspective of the world.  
-            Here are some of the destinations I've had the chance to explore:
-        </p>
+        <div class="relative bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-16 leading-relaxed">
+                    Traveling has played an important role in my education, as it allowed me to practice foreign languages, and broaden my perspective of the world.  
+                    Here are some of the destinations I've had the chance to explore:
+                </p>
 
-        <!-- Grille des pays -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
-            <!-- Angleterre -->
-            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                <div class="bg-gradient-to-br from-blue-500 to-red-600 text-white text-center py-8 text-6xl">
-                    🇬🇧
-                </div>
-                <div class="p-10">
-                    <h3 class="text-2xl font-bold text-primary mb-6">England</h3>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                        During my middle school years, I participated in a language immersion trip to southern England.  
-                        I stayed with a local host couple and was accompanied by two classmates.  
-                        This experience allowed me to improve my English while discovering England from the inside.
-                    </p>
-                </div>
-            </div>
+                <!-- Grille des pays -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+                    <!-- Angleterre -->
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                        <div class="bg-gradient-to-br from-blue-500 to-red-600 text-white text-center py-8 text-6xl">
+                            🇬🇧
+                        </div>
+                        <div class="p-10">
+                            <h3 class="text-2xl font-bold text-primary mb-6">England</h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                During my middle school years, I participated in a language immersion trip to southern England.  
+                                I stayed with a local host couple and was accompanied by two classmates.  
+                                This experience allowed me to improve my English while discovering England from the inside.
+                            </p>
+                        </div>
+                    </div>
 
-            <!-- Espagne -->
-            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                <div class="bg-gradient-to-br from-red-600 to-yellow-500 text-white text-center py-8 text-6xl">
-                    🇪🇸
-                </div>
-                <div class="p-10">
-                    <h3 class="text-2xl font-bold text-primary mb-6">Spain</h3>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                        I have traveled to Spain several times and discovered different regions of this beautiful country.  
-                        I visited Girona twice, a city I really enjoyed.  
-                        I also went to Valencia, where I explored the impressive City of Arts and Sciences.  
-                        With my family, I discovered Asturias, especially Gijón and its surroundings.  
-                        Finally, we traveled to Salamanca.
-                    </p>
-                </div>
-            </div>
+                    <!-- Espagne -->
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                        <div class="bg-gradient-to-br from-red-600 to-yellow-500 text-white text-center py-8 text-6xl">
+                            🇪🇸
+                        </div>
+                        <div class="p-10">
+                            <h3 class="text-2xl font-bold text-primary mb-6">Spain</h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                I have traveled to Spain several times and discovered different regions of this beautiful country.  
+                                I visited Girona twice, a city I really enjoyed.  
+                                I also went to Valencia, where I explored the impressive City of Arts and Sciences.  
+                                With my family, I discovered Asturias, especially Gijón and its surroundings.  
+                                Finally, we traveled to Salamanca.
+                            </p>
+                        </div>
+                    </div>
 
-            <!-- Italie -->
-            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                <div class="bg-gradient-to-br from-green-600 to-red-600 text-white text-center py-8 text-6xl">
-                    🇮🇹
+                    <!-- Italie -->
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                        <div class="bg-gradient-to-br from-green-600 to-red-600 text-white text-center py-8 text-6xl">
+                            🇮🇹
+                        </div>
+                        <div class="p-10">
+                            <h3 class="text-2xl font-bold text-primary mb-6">Italy</h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                With my family, I was lucky enough to visit different regions of Italy: 
+                                the Five Lands, Florence and Pisa.  
+                                This trip was full of discoveries, from history and architecture to food and culture.  
+                                I learned so much, and I am sure I will never forget this experience.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-10">
-                    <h3 class="text-2xl font-bold text-primary mb-6">Italy</h3>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                        With my family, I was lucky enough to visit different regions of Italy: 
-                        the Five Lands, Florence and Pisa.  
-                        This trip was full of discoveries, from history and architecture to food and culture.  
-                        I learned so much, and I am sure I will never forget this experience.
+
+                <!-- Section Mobilité internationale prévue -->
+                <section class="mt-20">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+                        Planned International Mobility: Semester 9
+                    </h2>
+
+                    <p class="text-xl text-justify text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                        As part of my engineering curriculum at ENSEEIHT, I plan to complete a full semester abroad.  
+                        This mobility is a key component of my personal and professional development: it will allow me to significantly improve my English — an essential skill for my future career as an engineer.
                     </p>
-                </div>
+
+                    <!-- Grille des 3 destinations (même style que les pays visités) -->
+                    <div class="grid md:grid-cols-3 gap-12 mb-12 max-w-7xl mx-auto">
+                        <!-- Vœu 1 : Norvège -->
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                            <div class="bg-gradient-to-br from-red-600 to-blue-600 text-white text-center py-12 text-6xl">
+                                🇳🇴
+                            </div>
+                            <div class="p-10">
+                                <h3 class="text-2xl font-bold text-primary mb-6">1st Choice: Norway</h3>
+                                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    I am particularly attracted to Norway for its breathtaking landscapes, unique climate, and the rich, innovative culture of Scandinavian countries.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Vœu 2 : Canada (Montréal) -->
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                            <div class="bg-gradient-to-br from-red-700 to-red-200 text-white text-center py-12 text-6xl">
+                                🇨🇦
+                            </div>
+                            <div class="p-10">
+                                <h3 class="text-2xl font-bold text-primary mb-6">2nd Choice: Canada</h3>
+                                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    Polytechnique Montréal is a highly renowned institution. The Quebec region has always fascinated me, both culturally and academically.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Vœu 3 : Irlande (Dublin) -->
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+                            <div class="bg-gradient-to-br from-green-600 to-orange-600 text-white text-center py-12 text-6xl">
+                                🇮🇪
+                            </div>
+                            <div class="p-10">
+                                <h3 class="text-2xl font-bold text-primary mb-6">3rd Choice: Ireland</h3>
+                                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    Studying in Dublin would offer full immersion in an English-speaking environment, ideal for perfecting my language skills in a professional and daily context.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte Common Goals pleine largeur en bas -->
+                    <div class="bg-gradient-to-br from-primary to-blue-700 text-white rounded-3xl shadow-2xl overflow-hidden max-w-7xl mx-auto">
+                        <div class="text-center py-6 text-6xl">
+                            🎯
+                        </div>
+                        <div class="px-10 pb-12">
+                            <h3 class="text-2xl font-bold mb-6 text-center">Common Goals</h3>
+                            <p class="text-lg text-justify leading-relaxed text-center max-w-4xl mx-auto">
+                                All three destinations offer prestigious partner universities with strong programs in HPC & Big Data, allowing me to deepen my specialization with courses and approaches complementary to those at ENSEEIHT.
+                            </p>
+                            <p class="text-lg text-center mt-12 italic max-w-4xl mx-auto">
+                                Applications have already been submitted for these exchange programs.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-
-        <!-- Section Mobilité internationale prévue -->
-        <section class="mt-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-                Planned International Mobility: Semester 9
-            </h2>
-
-            <p class="text-xl text-justify text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-                As part of my engineering curriculum at ENSEEIHT, I plan to complete a full semester abroad.  
-                This mobility is a key component of my personal and professional development: it will allow me to significantly improve my English — an essential skill for my future career as an engineer.
-            </p>
-
-            <!-- Grille des 3 destinations (même style que les pays visités) -->
-            <div class="grid md:grid-cols-3 gap-12 mb-12 max-w-7xl mx-auto">
-                <!-- Vœu 1 : Norvège -->
-                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <div class="bg-gradient-to-br from-red-600 to-blue-600 text-white text-center py-12 text-6xl">
-                        🇳🇴
-                    </div>
-                    <div class="p-10">
-                        <h3 class="text-2xl font-bold text-primary mb-6">1st Choice: Norway</h3>
-                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                            I am particularly attracted to Norway for its breathtaking landscapes, unique climate, and the rich, innovative culture of Scandinavian countries.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Vœu 2 : Canada (Montréal) -->
-                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <div class="bg-gradient-to-br from-red-700 to-red-200 text-white text-center py-12 text-6xl">
-                        🇨🇦
-                    </div>
-                    <div class="p-10">
-                        <h3 class="text-2xl font-bold text-primary mb-6">2nd Choice: Canada</h3>
-                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                            Polytechnique Montréal is a highly renowned institution. The Quebec region has always fascinated me, both culturally and academically.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Vœu 3 : Irlande (Dublin) -->
-                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <div class="bg-gradient-to-br from-green-600 to-orange-600 text-white text-center py-12 text-6xl">
-                        🇮🇪
-                    </div>
-                    <div class="p-10">
-                        <h3 class="text-2xl font-bold text-primary mb-6">3rd Choice: Ireland</h3>
-                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                            Studying in Dublin would offer full immersion in an English-speaking environment, ideal for perfecting my language skills in a professional and daily context.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte Common Goals pleine largeur en bas -->
-            <div class="bg-gradient-to-br from-primary to-blue-700 text-white rounded-3xl shadow-2xl overflow-hidden max-w-7xl mx-auto">
-                <div class="text-center py-6 text-6xl">
-                    🎯
-                </div>
-                <div class="px-10 pb-12">
-                    <h3 class="text-2xl font-bold mb-6 text-center">Common Goals</h3>
-                    <p class="text-lg text-justify leading-relaxed text-center max-w-4xl mx-auto">
-                        All three destinations offer prestigious partner universities with strong programs in HPC & Big Data, allowing me to deepen my specialization with courses and approaches complementary to those at ENSEEIHT.
-                    </p>
-                    <p class="text-lg text-center mt-12 italic max-w-4xl mx-auto">
-                        Applications have already been submitted for these exchange programs.
-                    </p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer avec background flux -->

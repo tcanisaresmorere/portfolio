@@ -66,112 +66,115 @@
         </nav>
     </header>
 
-    <main class="w-full -mt-40">
+    <main class="w-full">
         <!-- Bande titre avec background statistics -->
-        <div class="bg-no-repeat bg-center h-screen flex items-center" style="background-image: url('statistics_background.png');">
-            <div class="max-w-5xl mx-auto">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+        <div class="relative bg-cover bg-center bg-no-repeat w-full flex items-center justify-center" style="background-image: url('statistics_background.png'); height: 60vh; min-height: 400px;">
+            <!-- Titre centré -->
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl leading-tight">
                     Engineering Course
                 </h1>
             </div>
         </div>
 
         <!-- Timeline du parcours -->
-        <div class="relative max-w-7xl mx-auto -mt-20">
-            <!-- Ligne verticale centrale (visible sur desktop) -->
-            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full"></div>
+        <div class="relative bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-5xl mx-auto px-4 py-16">
+                <!-- Ligne verticale centrale (visible sur desktop) -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full"></div>
 
-            <!-- Années du parcours -->
-            <div class="space-y-20">
-                <!-- Année 1 : MPSI -->
-                <div class="relative flex items-center">
-                    <div class="md:w-1/2 md:pr-12 text-right">
-                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                            <h3 class="text-2xl font-bold text-primary mb-4">First year (CPGE): MPSI</h3>
-                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
-                                I started my higher education in MPSI (Mathematics, Physics, and Engineering Sciences).  
-                                This year provided a solid foundation in mathematics and physics, introducing rigorous scientific methods and problem-solving skills.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
-                    <div class="md:w-1/2 md:pl-12"></div>
-                </div>
-
-                <!-- Année 2 : PSI -->
-                <div class="relative flex items-center flex-row-reverse">
-                    <div class="md:w-1/2 md:pl-12">
-                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                            <h3 class="text-2xl font-bold text-primary mb-4">Second year (CPGE): PSI</h3>
-                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
-                                In PSI (Physics and Engineering Sciences), the curriculum continued to place a strong emphasis on physics and mathematics, while introducing more applied engineering topics.  
-                                This year also involved intensive preparation for the competitive entrance exams to French engineering schools.
-                            </p>
-                            <!-- TIPE -->
-                            <div class="mt-8 p-6 bg-primary/10 dark:bg-primary/20 rounded-xl">
-                                <h4 class="text-xl font-bold text-primary mb-4">
-                                    Supervised Personal Initiative Project (TIPE) – Realized in pair
-                                </h4>
-                                <p class="text-lg mb-4">
-                                    Optimization and Simulation of the French Billiard Game
+                <!-- Années du parcours -->
+                <div class="space-y-20">
+                    <!-- Année 1 : MPSI -->
+                    <div class="relative flex items-center">
+                        <div class="md:w-1/2 md:pr-12 text-right">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                                <h3 class="text-2xl font-bold text-primary mb-4">First year (CPGE): MPSI</h3>
+                                <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    I started my higher education in MPSI (Mathematics, Physics, and Engineering Sciences).  
+                                    This year provided a solid foundation in mathematics and physics, introducing rigorous scientific methods and problem-solving skills.
                                 </p>
-                                <div class="flex flex-wrap justify-center gap-4">
-                                    <a href="rapportTIPE.pdf" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-lg" download>
-                                        View Project Report
-                                    </a>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
+                        <div class="md:w-1/2 md:pl-12"></div>
+                    </div>
+
+                    <!-- Année 2 : PSI -->
+                    <div class="relative flex items-center flex-row-reverse">
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                                <h3 class="text-2xl font-bold text-primary mb-4">Second year (CPGE): PSI</h3>
+                                <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    In PSI (Physics and Engineering Sciences), the curriculum continued to place a strong emphasis on physics and mathematics, while introducing more applied engineering topics.  
+                                    This year also involved intensive preparation for the competitive entrance exams to French engineering schools.
+                                </p>
+                                <!-- TIPE -->
+                                <div class="mt-8 p-6 bg-primary/10 dark:bg-primary/20 rounded-xl">
+                                    <h4 class="text-xl font-bold text-primary mb-4">
+                                        Supervised Personal Initiative Project (TIPE) – Realized in pair
+                                    </h4>
+                                    <p class="text-lg mb-4">
+                                        Optimization and Simulation of the French Billiard Game
+                                    </p>
+                                    <div class="flex flex-wrap justify-center gap-4">
+                                        <a href="rapportTIPE.pdf" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-lg" download>
+                                            View Project Report
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
+                        <div class="md:w-1/2 md:pr-12"></div>
                     </div>
-                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
-                    <div class="md:w-1/2 md:pr-12"></div>
-                </div>
 
-                <!-- Année 3 : Digital Sciences (SN) -->
-                <div class="relative flex items-center">
-                    <div class="md:w-1/2 md:pr-12 text-right">
-                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                            <h3 class="text-2xl font-bold text-primary mb-4">Third year (ENSEEIHT): Digital Sciences Department</h3>
-                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
-                                I joined ENSEEIHT in the Digital Sciences department.  
-                                This year marked the transition from general scientific training to computer science and digital technologies.  
-                                I built a foundation across all areas of computer science, gaining knowledge and understanding of core concepts.
-                            </p>
-                            <!-- Projet Simulateur de Bourse intégré dans SN -->
-                            <div class="mt-8 p-6 bg-primary/10 dark:bg-primary/20 rounded-xl">
-                                <h4 class="text-xl font-bold text-primary mb-4">
-                                    Major Group Project – Object-Oriented Technology
-                                </h4>
-                                <p class="text-lg mb-4">
-                                    Stock Market Simulator
+                    <!-- Année 3 : Digital Sciences (SN) -->
+                    <div class="relative flex items-center">
+                        <div class="md:w-1/2 md:pr-12 text-right">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                                <h3 class="text-2xl font-bold text-primary mb-4">Third year (ENSEEIHT): Digital Sciences Department</h3>
+                                <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    I joined ENSEEIHT in the Digital Sciences department.  
+                                    This year marked the transition from general scientific training to computer science and digital technologies.  
+                                    I built a foundation across all areas of computer science, gaining knowledge and understanding of core concepts.
                                 </p>
-                                <p class="text-base text-gray-600 dark:text-gray-400 mb-6">
-                                    As part of the Object-Oriented Technology course, my team of four developed a complete stock market simulation application in Java.
-                                </p>
-                                <div class="text-center">
-                                    <a href="rapportTOB.pdf" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-lg" download>
-                                        View Project Report
-                                    </a>
+                                <!-- Projet Simulateur de Bourse intégré dans SN -->
+                                <div class="mt-8 p-6 bg-primary/10 dark:bg-primary/20 rounded-xl">
+                                    <h4 class="text-xl font-bold text-primary mb-4">
+                                        Major Group Project – Object-Oriented Technology
+                                    </h4>
+                                    <p class="text-lg mb-4">
+                                        Stock Market Simulator
+                                    </p>
+                                    <p class="text-base text-gray-600 dark:text-gray-400 mb-6">
+                                        As part of the Object-Oriented Technology course, my team of four developed a complete stock market simulation application in Java.
+                                    </p>
+                                    <div class="text-center">
+                                        <a href="rapportTOB.pdf" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-lg" download>
+                                            View Project Report
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
+                        <div class="md:w-1/2 md:pl-12"></div>
                     </div>
-                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
-                    <div class="md:w-1/2 md:pl-12"></div>
-                </div>
 
-                <!-- Année 4 : HPC & Big Data -->
-                <div class="relative flex items-center flex-row-reverse">
-                    <div class="md:w-1/2 md:pl-12">
-                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                            <h3 class="text-2xl font-bold text-primary mb-4">Fourth year (ENSEEIHT): HPC & Big Data Specialization</h3>
-                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
-                                In my second year at ENSEEIHT, in the HPC & Big Data track, I deepened my knowledge across both theoretical and applied areas of computer science. My coursework covered functional programming, language translation, automata and graph theory, software and systems engineering, concurrent and distributed systems, databases, advanced linear algebra, multiresolution analysis, geometric modeling, and machine learning with optimization. These studies allowed me to develop strong foundations in algorithms, mathematical modeling, and scalable software development.
-                            </p>
+                    <!-- Année 4 : HPC & Big Data -->
+                    <div class="relative flex items-center flex-row-reverse">
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                                <h3 class="text-2xl font-bold text-primary mb-4">Fourth year (ENSEEIHT): HPC & Big Data Specialization</h3>
+                                <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    In my second year at ENSEEIHT, in the HPC & Big Data track, I deepened my knowledge across both theoretical and applied areas of computer science. My coursework covered functional programming, language translation, automata and graph theory, software and systems engineering, concurrent and distributed systems, databases, advanced linear algebra, multiresolution analysis, geometric modeling, and machine learning with optimization. These studies allowed me to develop strong foundations in algorithms, mathematical modeling, and scalable software development.
+                                </p>
+                            </div>
                         </div>
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
+                        <div class="md:w-1/2 md:pr-12"></div>
                     </div>
-                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900"></div>
-                    <div class="md:w-1/2 md:pr-12"></div>
                 </div>
             </div>
         </div>
