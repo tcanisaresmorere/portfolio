@@ -45,7 +45,7 @@
             </button>
         </div>
 
-        <nav class="max-w-6xl mx-auto px-4 mt-4">
+        <nav class="w-full px-20 py-6">
             <!-- Bouton burger (visible seulement sur mobile) -->
             <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
 
@@ -66,18 +66,22 @@
         </nav>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-12 md:py-20">
-        <!-- Titre principal -->
-        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
-            Sport & Other Activities
-        </h1>
+    <main class="w-full -mt-40">
+        <!-- Bande titre avec background statistics -->
+        <div class="bg-no-repeat bg-center h-screen flex items-center" style="background-image: url('statistics_background.png');">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                    Sport & Other Activities
+                </h1>
+            </div>
+        </div>
 
-        <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+        <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-7xl mx-auto mb-12 leading-relaxed -mt-20">
             Beyond my academic path, I cultivate several passions that contribute to my personal growth and creativity.
         </p>
 
         <!-- Grille des trois passions -->
-        <div class="grid md:grid-cols-2 gap-12">
+        <div class="grid md:grid-cols-2 max-w-7xl mx-auto gap-12">
             <!-- Judo & Martial Arts -->
             <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
                 <div class="bg-gradient-to-br from-red-600 to-black text-white text-center py-12 text-6xl">
@@ -119,11 +123,12 @@
         </div>
     </main>
 
-    <!-- Footer avec coordonnées intégrées -->
-    <footer class="bg-primary text-white py-8 mt-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <!-- Coordonnées (en haut du footer) -->
-            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6">
+    <!-- Footer avec background flux -->
+    <footer class="relative bg-cover bg-center py-12 mt-16 overflow-hidden" style="background-image: url('flux_background.png');">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
+        <div class="relative max-w-6xl mx-auto px-4 z-10">
+            <!-- Coordonnées -->
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6 text-white">
                 <p class="text-lg flex items-center gap-3">
                     <span class="font-bold">📞</span> 
                     +33 6 12 02 53 62
@@ -140,9 +145,9 @@
                 </p>
             </div>
 
-            <!-- Copyright centré en bas -->
-            <div class="text-center text-sm opacity-80">
-                © <span id="year"></span> Thomas Canisares--Morère. All rights reserved.
+            <!-- Copyright -->
+            <div class="text-center text-sm text-white/80">
+                © <span id="year"></span> Thomas Canisares-Morère. All rights reserved.
             </div>
         </div>
     </footer>

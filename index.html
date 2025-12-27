@@ -38,7 +38,7 @@
     <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
             <!-- Branding -->
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-10">
                 <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
                 <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
             </div>
@@ -49,7 +49,7 @@
             </button>
         </div>
 
-        <nav class="max-w-6xl mx-auto px-4 mt-4">
+        <nav class="w-full px-20 py-6">
             <!-- Bouton burger (visible seulement sur mobile) -->
             <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
 
@@ -70,10 +70,10 @@
         </nav>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+    <main class="max-w-7xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <!-- Photo à gauche -->
-            <div class="order-2 md:order-1 flex justify-center md:justify-end">
+            <div>
                 <img src="photo_chemise.jpg" alt="Photo of Thomas Canisares-Morère" 
                      class="w-100 h-100 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] object-cover rounded-full border-8 border-primary shadow-2xl">
             </div>
@@ -116,21 +116,29 @@
         </div>
     </main>
 
-    <section class="max-w-4xl mx-auto px-4 py-16 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-10">More about me</h2>
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-            <video controls class="w-full">
-                <source src="assets/video-presentation.mp4" type="video/mp4">
-                Your browser does not support video.
-            </video>
+    <!-- Section Vidéo "More about me" -->
+    <section class="max-w-5xl mx-auto px-4 py-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12">
+            More about me
+        </h2>
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-video bg-black">
+            <iframe 
+                class="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/zEl81vmJbUY?rel=0"
+                title="Personal Presentation"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
     </section>
 
-    <!-- Footer avec coordonnées intégrées -->
-    <footer class="bg-primary text-white py-8 mt-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <!-- Coordonnées (en haut du footer) -->
-            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-4">
+    <!-- Footer avec background flux -->
+    <footer class="relative bg-cover bg-center py-12 mt-16 overflow-hidden" style="background-image: url('flux_background.png');">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
+        <div class="relative max-w-6xl mx-auto px-4 z-10">
+            <!-- Coordonnées -->
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6 text-white">
                 <p class="text-lg flex items-center gap-3">
                     <span class="font-bold">📞</span> 
                     +33 6 12 02 53 62
@@ -147,9 +155,9 @@
                 </p>
             </div>
 
-            <!-- Copyright centré en bas -->
-            <div class="text-center text-sm opacity-80">
-                © <span id="year"></span> Thomas Canisares--Morère. All rights reserved.
+            <!-- Copyright -->
+            <div class="text-center text-sm text-white/80">
+                © <span id="year"></span> Thomas Canisares-Morère. All rights reserved.
             </div>
         </div>
     </footer>
