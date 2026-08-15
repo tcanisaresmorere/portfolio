@@ -3,150 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sustainability & Civic Engagement - Thomas Canisares-Morère</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS via CDN -->
+    <meta name="description" content="Sustainability & Civic Engagement of Thomas Canisares-Morère — engineering student in HPC & Big Data at ENSEEIHT Toulouse INP.">
+    <title>Sustainability &amp; Civic Engagement — Thomas Canisares-Morère</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: '#2962FF',
+              primary:   '#0EA5E9',
+              navy:      '#0A1628',
+              navyLight: '#112240',
+              navyMid:   '#1E3A5F',
+              cyan:      '#22D3EE',
             },
-            fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
-            }
+            fontFamily: { sans: ['Inter', 'sans-serif'] }
           }
-        },
-        darkMode: 'class',  // Important pour ton dark mode existant
+        }
       }
     </script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <!-- Script pour appliquer le dark mode dès le chargement -->
+<body class="bg-slate-50 dark:bg-navy font-sans transition-colors duration-300">
     <script>
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.documentElement.classList.add('dark');
         }
     </script>
-    <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
-            <!-- Branding -->
-            <div class="flex items-center gap-10">
-                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
-                <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
+    <header class="header-glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex flex-col">
+                <span class="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Thomas Canisares-Morère</span>
+                <span class="text-xs font-semibold text-primary uppercase tracking-widest hidden sm:block">Data Scientist · Aviation &amp; Big Data</span>
             </div>
-
-            <!-- Bouton Dark Mode -->
-            <button id="dark-mode-toggle" class="text-3xl bg-gray-200 dark:bg-gray-700 rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
-                🌙
-            </button>
+            <button id="dark-mode-toggle" class="text-2xl bg-slate-100 dark:bg-navyLight rounded-full w-12 h-12 flex items-center justify-center hover:scale-110 transition-transform shadow-sm" aria-label="Toggle dark mode">🌙</button>
         </div>
-
-        <nav class="w-full px-20 py-6">
-            <!-- Bouton burger (visible seulement sur mobile) -->
-            <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
-
-            <!-- Liste des liens -->
-            <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 bg-white dark:bg-gray-800 rounded-3xl py-4 px-6 shadow-lg 
-                    md:flex md:items-center 
-                    hidden md:flex
-                    text-gray-800 dark:text-gray-200">
-
-                <li><a href="index.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Welcome</a></li>
-                <li><a href="engineering-course.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Engineering Course</a></li>
-                <li><a href="international-mobility.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">International Mobility</a></li>
-                <li><a href="personal-professional-project.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Personal Professional Project</a></li>
-                <li><a href="internships.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Internships</a></li>
-                <li><a href="sustainability.html" class="block px-6 py-3 rounded-full bg-primary text-white font-semibold">Sustainability & Civic Engagement</a></li>
-                <li><a href="sport.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sport & Other Activities</a></li>
-                <li><a href="careers.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Careers Section</a></li>
+        <nav class="w-full px-6 pb-4">
+            <button class="menu-toggle md:hidden text-3xl font-bold mb-3 text-slate-700 dark:text-slate-200" aria-label="Open menu">☰</button>
+            <ul class="hidden md:flex flex-col md:flex-row md:flex-wrap justify-center gap-2
+                       bg-white/70 dark:bg-navyLight/80 backdrop-blur rounded-2xl py-3 px-5 shadow-sm
+                       text-slate-700 dark:text-slate-200">
+                <li><a href="index.html"                         class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Welcome</a></li>
+                <li><a href="engineering-course.html"            class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Engineering Course</a></li>
+                <li><a href="international-mobility.html"        class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Personal Professional Project</a></li>
+                <li><a href="internships.html"                   class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Internships</a></li>
+                <li><a href="sustainability.html"                class="block px-5 py-2.5 rounded-full bg-primary text-white font-semibold text-sm">Sustainability &amp; Civic Engagement</a></li>
+                <li><a href="sport.html"                         class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Sport &amp; Other Activities</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="w-full">
-        <!-- Bande titre avec background statistics -->
-        <div class="relative bg-cover bg-center bg-no-repeat w-full flex items-center justify-center" style="background-image: url('statistics_background.png'); height: 60vh; min-height: 400px;">
-            <div class="relative z-10 text-center px-4">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl leading-tight">
-                    Sustainability & Civic Engagement
-                </h1>
+
+        <!-- PAGE HERO BANNER -->
+        <div class="page-hero-banner" style="min-height: 300px;">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Sustainability</h1>
+                <p class="page-hero-subtitle">&amp; Civic Engagement</p>
             </div>
         </div>
 
-        <div class="relative bg-gray-50 dark:bg-gray-900">
-            <div class="max-w-7xl mx-auto px-4 py-16">
-                <p class="text-xl text-justify text-center text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-20 leading-relaxed">
-                    At ENSEEIHT, students are encouraged to take part in activities that raise awareness about global challenges and social responsibility. During my first year, I had the opportunity to participate in two major initiatives.
-                </p>
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-16">
+            <p class="text-lg text-center text-slate-600 dark:text-slate-300 max-w-4xl mx-auto mb-16 leading-relaxed reveal">
+                At ENSEEIHT, students are encouraged to take part in activities that raise awareness about global challenges and social responsibility.
+                During my first year, I had the opportunity to participate in two major initiatives.
+            </p>
 
-                <!-- Grille des deux initiatives -->
-                <div class="grid md:grid-cols-2 max-w-7xl mx-auto gap-12">
-                    <!-- Climate Fresk -->
-                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                        <div class="bg-gradient-to-br from-green-500 to-teal-600 text-white text-center py-12 text-6xl">
-                            🌍
-                        </div>
-                        <div class="p-10">
-                            <h2 class="text-2xl font-bold text-primary mb-6">Climate Fresk</h2>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                The Climate Fresk is a collaborative workshop designed to raise awareness about climate change by connecting scientific data with real-world impacts. In small groups, we built a visual map of the causes and consequences of global warming.
-                            </p>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
-                                This activity allowed me to deepen my understanding of environmental issues. It also highlighted the role that engineers must play in building sustainable solutions for the future.
-                            </p>
-                        </div>
-                    </div>
+            <div class="grid md:grid-cols-2 max-w-7xl mx-auto gap-10">
 
-                    <!-- Disability Awareness Day -->
-                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
-                        <div class="bg-gradient-to-br from-purple-500 to-pink-600 text-white text-center py-12 text-6xl">
-                            ♿
-                        </div>
-                        <div class="p-10">
-                            <h2 class="text-3xl font-bold text-primary mb-6">Disability Awareness Day</h2>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                The Disability Awareness Day was particularly meaningful to me on a personal level.  
-                                Having a younger brother with autism, I have always been deeply aware of the importance of inclusion and understanding towards people with disabilities.
-                            </p>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6">
-                                I strongly believe that such initiatives are a real opportunity for students, as they encourage us to develop empathy and openness. I am sincerely grateful that ENSEEIHT supports these values and actively promotes awareness of the challenges faced by people with disabilities.
-                            </p>
-                        </div>
+                <!-- Climate Fresk -->
+                <div class="country-card dark:bg-navyLight reveal reveal-delay-1">
+                    <div class="py-10 text-center text-6xl" style="background: linear-gradient(135deg, #16a34a, #0d9488);">🌍</div>
+                    <div class="p-10">
+                        <h2 class="text-2xl font-extrabold text-primary mb-4">Climate Fresk</h2>
+                        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            The Climate Fresk is a collaborative workshop designed to raise awareness about climate change by connecting scientific data with real-world impacts.
+                            In small groups, we built a visual map of the causes and consequences of global warming.
+                        </p>
+                        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                            This activity allowed me to deepen my understanding of environmental issues.
+                            It also highlighted the role that engineers must play in building sustainable solutions for the future.
+                        </p>
                     </div>
                 </div>
+
+                <!-- Disability Awareness Day -->
+                <div class="country-card dark:bg-navyLight reveal reveal-delay-2">
+                    <div class="py-10 text-center text-6xl" style="background: linear-gradient(135deg, #7c3aed, #db2777);">&#9855;</div>
+                    <div class="p-10">
+                        <h2 class="text-2xl font-extrabold text-primary mb-4">Disability Awareness Day</h2>
+                        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            The Disability Awareness Day was particularly meaningful to me on a personal level.
+                            Having a younger brother with autism, I have always been deeply aware of the importance of inclusion and understanding towards people with disabilities.
+                        </p>
+                        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                            I strongly believe that such initiatives are a real opportunity for students, as they encourage us to develop empathy and openness.
+                            I am sincerely grateful that ENSEEIHT supports these values and actively promotes awareness of the challenges faced by people with disabilities.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
-    <!-- Footer avec background flux -->
-    <footer class="relative bg-cover bg-center py-12 mt-16 overflow-hidden" style="background-image: url('flux_background.png');">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
-        <div class="relative max-w-6xl mx-auto px-4 z-10">
-            <!-- Coordonnées -->
-            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6 text-white">
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">📞</span> 
-                    +33 6 12 02 53 62
+    <footer class="footer-aero py-12 mt-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6 text-slate-300">
+                <p class="flex items-center gap-3 text-base"><span>📞</span> +33 6 12 02 53 62</p>
+                <p class="flex items-center gap-3 text-base"><span>✉️</span>
+                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:text-cyan transition-colors">thomas.canisaresmorere@etu.toulouse-inp.fr</a>
                 </p>
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">✉️</span> 
-                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:underline">
-                        thomas.canisaresmorere@etu.toulouse-inp.fr
-                    </a>
-                </p>
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">🏠</span> 
-                    31100 Toulouse, France
-                </p>
+                <p class="flex items-center gap-3 text-base"><span>🏠</span> 31100 Toulouse, France</p>
             </div>
-
-            <!-- Copyright -->
-            <div class="text-center text-sm text-white/80">
-                © <span id="year"></span> Thomas Canisares-Morère. All rights reserved.
+            <div class="text-center text-sm text-slate-500">
+                &copy; <span id="year"></span> Thomas Canisares-Mor&egrave;re. All rights reserved.
             </div>
         </div>
     </footer>

@@ -3,209 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Professional Project - Thomas Canisares-Morère</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS via CDN -->
+    <meta name="description" content="Personal Professional Project of Thomas Canisares-Morère — engineering student in HPC & Big Data at ENSEEIHT Toulouse INP.">
+    <title>Personal Professional Project — Thomas Canisares-Morère</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: '#2962FF',
+              primary:   '#0EA5E9',
+              navy:      '#0A1628',
+              navyLight: '#112240',
+              navyMid:   '#1E3A5F',
+              cyan:      '#22D3EE',
             },
-            fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
-            }
+            fontFamily: { sans: ['Inter', 'sans-serif'] }
           }
-        },
-        darkMode: 'class',  // Important pour ton dark mode existant
+        }
       }
     </script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <!-- Script pour appliquer le dark mode dès le chargement -->
+<body class="bg-slate-50 dark:bg-navy font-sans transition-colors duration-300">
     <script>
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.documentElement.classList.add('dark');
         }
     </script>
-    <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
-            <!-- Branding -->
-            <div class="flex items-center gap-10">
-                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
-                <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
+    <header class="header-glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex flex-col">
+                <span class="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Thomas Canisares-Morère</span>
+                <span class="text-xs font-semibold text-primary uppercase tracking-widest hidden sm:block">Data Scientist · Aviation &amp; Big Data</span>
             </div>
-
-            <!-- Bouton Dark Mode -->
-            <button id="dark-mode-toggle" class="text-3xl bg-gray-200 dark:bg-gray-700 rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
-                🌙
-            </button>
+            <button id="dark-mode-toggle" class="text-2xl bg-slate-100 dark:bg-navyLight rounded-full w-12 h-12 flex items-center justify-center hover:scale-110 transition-transform shadow-sm" aria-label="Toggle dark mode">🌙</button>
         </div>
-
-        <nav class="w-full px-20 py-6">
-            <!-- Bouton burger (visible seulement sur mobile) -->
-            <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
-
-            <!-- Liste des liens -->
-            <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 bg-white dark:bg-gray-800 rounded-3xl py-4 px-6 shadow-lg 
-                    md:flex md:items-center 
-                    hidden md:flex
-                    text-gray-800 dark:text-gray-200">
-
-                <li><a href="index.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Welcome</a></li>
-                <li><a href="engineering-course.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Engineering Course</a></li>
-                <li><a href="international-mobility.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">International Mobility</a></li>
-                <li><a href="personal-professional-project.html" class="block px-6 py-3 rounded-full bg-primary text-white font-semibold">Personal Professional Project</a></li>
-                <li><a href="internships.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Internships</a></li>
-                <li><a href="sustainability.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sustainability & Civic Engagement</a></li>
-                <li><a href="sport.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sport & Other Activities</a></li>
-                <li><a href="careers.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Careers Section</a></li>
+        <nav class="w-full px-6 pb-4">
+            <button class="menu-toggle md:hidden text-3xl font-bold mb-3 text-slate-700 dark:text-slate-200" aria-label="Open menu">☰</button>
+            <ul class="hidden md:flex flex-col md:flex-row md:flex-wrap justify-center gap-2
+                       bg-white/70 dark:bg-navyLight/80 backdrop-blur rounded-2xl py-3 px-5 shadow-sm
+                       text-slate-700 dark:text-slate-200">
+                <li><a href="index.html"                         class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Welcome</a></li>
+                <li><a href="engineering-course.html"            class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Engineering Course</a></li>
+                <li><a href="international-mobility.html"        class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Personal Professional Project</a></li>
+                <li><a href="internships.html"                   class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Internships</a></li>
+                <li><a href="sustainability.html"                class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Sustainability &amp; Civic Engagement</a></li>
+                <li><a href="sport.html"                         class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Sport &amp; Other Activities</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="w-full">
-        <!-- Bande titre avec background statistics -->
-        <div class="relative bg-cover bg-center bg-no-repeat w-full flex items-center justify-center" style="background-image: url('statistics_background.png'); height: 60vh; min-height: 400px;">
-            <!-- Titre centré -->
-            <div class="relative z-10 text-center px-4">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl leading-tight">
-                    Personal Professional Project
-                </h1>
+
+        <!-- PAGE HERO BANNER -->
+        <div class="page-hero-banner" style="min-height: 300px;">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Personal Professional Project</h1>
+                <p class="page-hero-subtitle">Career Vision · Networking · Industry Connections</p>
             </div>
         </div>
 
-        <div class="relative bg-gray-50 dark:bg-gray-900">
-            <div class="max-w-7xl mx-auto px-4 py-16">
-                <!-- Introduction -->
-                <p class="text-xl text-justify text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-                    Connecting with professionals is one of the best ways to prepare effectively for entering the job market after my studies.  
-                    To do this, I use platforms such as LinkedIn and MyJobGlasses to reach out to engineers and managers working in the transportation sector.
-                </p>
-                <p class="text-lg text-justify text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-                    Thanks to MyJobGlasses, I had the opportunity to exchange with professionals from major companies in this field: my internship at TE Connectivity (sensors and connectivity solutions for automotive and heavy vehicles) and discussions with two professionals from Thales in the aeronautics and aerospace domain.  
-                    These conversations helped me better understand the daily reality of engineers and the expectations of large industrial groups.
-                </p>
-                <!-- Secteurs d'intérêt -->
-                <section class="max-w-6xl mx-auto mb-20">
-                    <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-                        Career Interests
-                    </h2>
-                    <div>
-                        <!-- Aéronautique / Transport -->
-                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 text-center">
-                            <div class="text-6xl mb-8">✈️</div>
-                            <h3 class="text-2xl font-bold text-primary mb-6">Transportation & Aeronautics</h3>
-                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Aeronautics and aerospace fascinate me because of their technological challenges and contribution to global mobility. The transportation sector has a strong societal impact, combining innovation, safety, and performance.
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-16">
+
+            <!-- Introduction -->
+            <p class="text-lg text-center text-slate-600 dark:text-slate-300 max-w-4xl mx-auto mb-6 leading-relaxed reveal">
+                Connecting with professionals is one of the best ways to prepare effectively for entering the job market after my studies.
+                I use platforms such as <strong class="text-slate-800 dark:text-white">LinkedIn</strong> and <strong class="text-slate-800 dark:text-white">MyJobGlasses</strong> to reach out to engineers and managers working in the transportation and aeronautics sector.
+            </p>
+            <p class="text-base text-center text-slate-500 dark:text-slate-400 max-w-4xl mx-auto mb-16 leading-relaxed reveal">
+                Thanks to MyJobGlasses, I had the opportunity to exchange with professionals from major companies: my internship at TE Connectivity and inspiring discussions with two professionals from <strong class="text-primary">Thales</strong> in the aeronautics and aerospace domain.
+                These conversations helped me better understand the daily reality of engineers and the expectations of large industrial groups.
+            </p>
+
+            <!-- Career Interest -->
+            <section class="mb-20 reveal" aria-label="Career interests">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Career Interest</h2>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <div class="rounded-3xl overflow-hidden shadow-xl" style="border: 1px solid rgba(14,165,233,0.15);">
+                        <div class="internship-header" style="border-radius: 0; padding: 2rem;">
+                            <div class="relative z-10 text-center">
+                                <div class="text-6xl mb-4">✈️</div>
+                                <h3 class="text-xl font-extrabold text-white mb-1">Transportation &amp; Aeronautics</h3>
+                                <div class="flex flex-wrap justify-center gap-2 mt-4">
+                                    <span class="badge badge-aero">Aviation Data</span>
+                                    <span class="badge badge-aero">ATM / ATC</span>
+                                    <span class="badge badge-data">Big Data</span>
+                                    <span class="badge badge-ml">Data Science</span>
+                                    <span class="badge badge-cloud">Cloud Engineering</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-navyLight p-8">
+                            <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+                                Aeronautics and aerospace fascinate me because of their extraordinary technological challenges and their central contribution to global mobility.
+                                The transportation sector has a strong societal impact, combining innovation, safety, and high performance — a perfect match for my passion for <strong class="text-slate-800 dark:text-white">applied mathematics, data engineering and machine learning</strong>.
+                                My goal is to contribute to the digital transformation of air traffic management and aeronautical systems, as illustrated by my data science internship at <strong class="text-primary">DGAC/DSNA</strong>.
                             </p>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Mentors -->
-                <section class="max-w-7xl mx-auto mb-20">
-                    <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
-                        Connecting with Mentors
-                    </h2>
-                    <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-                        Thanks to MyJobGlasses, I connected with professionals from Thales.
-                    </p>
-
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <!-- Mentor 1 -->
-                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 text-center">
-                            <img src="yan_frick.avif" alt="Yan Frick" class="w-48 h-48 mx-auto object-cover rounded-full border-4 border-primary mb-6">
-                            <h3 class="text-2xl font-bold text-primary">Yan Frick</h3>
-                            <p class="text-lg font-semibold text-gray-600 dark:text-gray-400">Head of Digital and IS, Thales Flight Line Avionics BU</p>
-                        </div>
-                        <!-- Mentor 2 -->
-                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 text-center">
-                            <img src="yohann_p.avif" alt="Yohann P." class="w-48 h-48 mx-auto object-cover rounded-full border-4 border-primary mb-6">
-                            <h3 class="text-2xl font-bold text-primary">Yohann P.</h3>
-                            <p class="text-lg font-semibold text-gray-600 dark:text-gray-400">Engineering Delivery Manager, Thales</p>
-                        </div>
+            <!-- Mentors -->
+            <section class="mb-20" aria-label="Mentors">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Connecting with Mentors</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">via MyJobGlasses — Thales Professionals</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <!-- Mentor 1 -->
+                    <div class="bg-white dark:bg-navyLight rounded-3xl shadow-xl p-10 text-center reveal reveal-delay-1" style="border: 1px solid rgba(14,165,233,0.12);">
+                        <img src="yan_frick.avif" alt="Yan Frick"
+                             class="w-36 h-36 mx-auto object-cover rounded-full mb-5"
+                             style="border: 3px solid #0EA5E9; box-shadow: 0 0 0 4px rgba(14,165,233,0.15);">
+                        <h3 class="text-lg font-extrabold text-primary mb-1">Yan Frick</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Head of Digital and IS<br>Thales Flight Line Avionics BU</p>
                     </div>
-                </section>
+                    <!-- Mentor 2 -->
+                    <div class="bg-white dark:bg-navyLight rounded-3xl shadow-xl p-10 text-center reveal reveal-delay-2" style="border: 1px solid rgba(14,165,233,0.12);">
+                        <img src="yohann_p.avif" alt="Yohann P."
+                             class="w-36 h-36 mx-auto object-cover rounded-full mb-5"
+                             style="border: 3px solid #0EA5E9; box-shadow: 0 0 0 4px rgba(14,165,233,0.15);">
+                        <h3 class="text-lg font-extrabold text-primary mb-1">Yohann P.</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Engineering Delivery Manager<br>Thales</p>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Stage TE Connectivity sans en-tête bleu -->
-                <section class="mb-20">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-                        Transport Industry & Internship Experience
-                    </h2>
-
-                    <div class="relative bg-white dark:bg-gray-800 shadow-2xl overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('lines_background.svg');">
-                        <!-- Contenu centré avec logo et texte -->
-                        <div class="relative z-10 p-10 md:p-16 text-center">
-                            <img src="TE_logo.png" alt="TE Connectivity" class="w-64 mx-auto mb-8">
-                            <p class="text-2xl font-bold text-primary mb-6">Manufacturing Engineering Intern - Summer 2025</p>
-                            <p class="text-lg text-justify text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
-                                My internship at TE Connectivity (Toulouse site), an international leader in connectivity and sensor solutions, gave me valuable insights into the transport industry.  
-                                The Manufacturing Engineering team was led by Pascal Boussioux, and I was directly supervised by Hélène Choteau (process engineering) and Sarah Albert (soldering specialist).  
-                                I worked on optimizing manufacturing processes and data analysis, reinforcing my motivation to contribute to this exciting field.
-                            </p>
+            <!-- TE Connectivity ref -->
+            <section class="mb-20 reveal" aria-label="Internship experience">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-center text-slate-900 dark:text-white mb-10">Transport Industry &amp; Internship Experience</h2>
+                <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-xl" style="border: 1px solid rgba(14,165,233,0.12);">
+                    <div class="relative overflow-hidden text-center py-10 px-8" style="background: linear-gradient(135deg, #1a2a4a, #0d1f35);">
+                        <div class="absolute inset-0" style="background-image: linear-gradient(rgba(14,165,233,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,0.05) 1px, transparent 1px); background-size: 36px 36px;"></div>
+                        <div class="relative z-10">
+                            <img src="TE_logo.png" alt="TE Connectivity" class="w-44 mx-auto mb-5 opacity-90">
+                            <p class="text-base font-bold text-primary">Manufacturing Engineering Intern — Summer 2025</p>
                         </div>
                     </div>
-                </section>
-
-                <!-- Livrables PPP -->
-                <section class="text-center">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                        PPP Deliverables
-                    </h2>
-                    <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-6xl mx-auto mb-12 leading-relaxed">
-                        As part of this PPP, I produced several documents reflecting my research, interviews, and career reflections:
-                    </p>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                        <a href="CV_FR.pdf" class="bg-primary text-white font-semibold px-8 py-8 rounded-3xl hover:bg-blue-700 transition shadow-2xl flex flex-col items-center gap-4" download>
-                            <div class="text-6xl">📄</div>
-                            <span>CV Français</span>
-                        </a>
-                        <a href="CV_EN.pdf" class="bg-primary text-white font-semibold px-8 py-8 rounded-3xl hover:bg-blue-700 transition shadow-2xl flex flex-col items-center gap-4" download>
-                            <div class="text-6xl">📄</div>
-                            <span>CV English</span>
-                        </a>
-                        <a href="PPP_bilan.pdf" class="bg-primary text-white font-semibold px-8 py-8 rounded-3xl hover:bg-blue-700 transition shadow-2xl flex flex-col items-center gap-4" download>
-                            <div class="text-6xl">📝</div>
-                            <span>written report of my research</span>
-                        </a>
-                        <a href="diapo_PPP.pdf" class="bg-primary text-white font-semibold px-8 py-8 rounded-3xl hover:bg-blue-700 transition shadow-2xl flex flex-col items-center gap-4" download>
-                            <div class="text-6xl">📊</div>
-                            <span>PPP Presentation<br>(7 slides)</span>
-                        </a>
+                    <div class="bg-white dark:bg-navyLight p-8">
+                        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+                            My internship at <strong class="text-slate-800 dark:text-white">TE Connectivity</strong> (Toulouse site), an international leader in connectivity and sensor solutions, gave me valuable insights into the transport industry.
+                            The Manufacturing Engineering team was led by Pascal Boussioux, and I was directly supervised by Hélène Choteau (process engineering) and Sarah Albert (soldering specialist).
+                            I worked on optimizing manufacturing processes and data analysis, reinforcing my motivation to contribute to advanced industrial environments.
+                        </p>
+                        <div class="mt-4">
+                            <a href="internships.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">→ See full internship details</a>
+                        </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+
+            <!-- PPP Deliverables -->
+            <section class="reveal" aria-label="PPP deliverables">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">PPP Deliverables</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Documents produced as part of my Personal Professional Project research</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <a href="CV_FR.pdf" download
+                       class="livrable-card flex flex-col items-center gap-4 text-center group cursor-pointer">
+                        <div class="livrable-icon livrable-icon-pdf text-3xl">📄</div>
+                        <div>
+                            <p class="font-bold text-slate-900 dark:text-white text-sm">CV Français</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Télécharger PDF</p>
+                        </div>
+                        <span class="btn-livrable btn-download text-xs mt-auto">⬇ Download</span>
+                    </a>
+                    <a href="CV_EN.pdf" download
+                       class="livrable-card flex flex-col items-center gap-4 text-center group cursor-pointer">
+                        <div class="livrable-icon livrable-icon-pdf text-3xl">📄</div>
+                        <div>
+                            <p class="font-bold text-slate-900 dark:text-white text-sm">CV English</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Download PDF</p>
+                        </div>
+                        <span class="btn-livrable btn-download text-xs mt-auto">⬇ Download</span>
+                    </a>
+                    <a href="PPP_bilan.pdf" download
+                       class="livrable-card flex flex-col items-center gap-4 text-center group cursor-pointer">
+                        <div class="livrable-icon livrable-icon-nb text-3xl">📝</div>
+                        <div>
+                            <p class="font-bold text-slate-900 dark:text-white text-sm">Written Report</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Research bilan</p>
+                        </div>
+                        <span class="btn-livrable btn-download text-xs mt-auto">⬇ Download</span>
+                    </a>
+                    <a href="diapo_PPP.pdf" download
+                       class="livrable-card flex flex-col items-center gap-4 text-center group cursor-pointer">
+                        <div class="livrable-icon livrable-icon-nb text-3xl">📊</div>
+                        <div>
+                            <p class="font-bold text-slate-900 dark:text-white text-sm">PPP Presentation</p>
+                            <p class="text-xs text-slate-500 mt-0.5">7 slides</p>
+                        </div>
+                        <span class="btn-livrable btn-download text-xs mt-auto">⬇ Download</span>
+                    </a>
+                </div>
+            </section>
+
         </div>
     </main>
 
-    <!-- Footer avec background flux -->
-    <footer class="relative bg-cover bg-center py-12 mt-16 overflow-hidden" style="background-image: url('flux_background.png');">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
-        <div class="relative max-w-6xl mx-auto px-4 z-10">
-            <!-- Coordonnées -->
-            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6 text-white">
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">📞</span> 
-                    +33 6 12 02 53 62
+    <footer class="footer-aero py-12 mt-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6 text-slate-300">
+                <p class="flex items-center gap-3 text-base"><span>📞</span> +33 6 12 02 53 62</p>
+                <p class="flex items-center gap-3 text-base"><span>✉️</span>
+                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:text-cyan transition-colors">thomas.canisaresmorere@etu.toulouse-inp.fr</a>
                 </p>
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">✉️</span> 
-                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:underline">
-                        thomas.canisaresmorere@etu.toulouse-inp.fr
-                    </a>
-                </p>
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">🏠</span> 
-                    31100 Toulouse, France
-                </p>
+                <p class="flex items-center gap-3 text-base"><span>🏠</span> 31100 Toulouse, France</p>
             </div>
-
-            <!-- Copyright -->
-            <div class="text-center text-sm text-white/80">
+            <div class="text-center text-sm text-slate-500">
                 © <span id="year"></span> Thomas Canisares-Morère. All rights reserved.
             </div>
         </div>

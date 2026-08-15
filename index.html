@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="E-portfolio of Thomas Canisares-Morère, Engineering student in HPC & Big Data at ENSEEIHT Toulouse INP.">
-    <meta name="keywords" content="engineering, HPC, Big Data, portfolio, Thomas Canisares-Morère">
-    <title>Thomas Canisares-Morère - E-Portfolio</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="E-portfolio of Thomas Canisares-Morère, Data Scientist specializing in aeronautical Big Data, ADS-B trajectories and ATM at ENSEEIHT Toulouse INP. Seeking internship at Airbus.">
+    <meta name="keywords" content="Data Scientist, aeronautical data, ADS-B, ATM, Big Data, HPC, ENSEEIHT, Thomas Canisares-Morère, Airbus, DGAC, Polars, machine learning">
+    <title>Thomas Canisares-Morère — Data Scientist | Aeronautical Big Data</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        darkMode: 'class',  // Important pour ton dark mode existant
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: '#2962FF',
+              primary:    '#0EA5E9',
+              navy:       '#0A1628',
+              navyLight:  '#112240',
+              navyMid:    '#1E3A5F',
+              cyan:       '#22D3EE',
             },
             fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
             }
           }
         }
@@ -28,136 +34,219 @@
     </script>
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <!-- Script pour appliquer le dark mode dès le chargement -->
+<body class="bg-slate-50 dark:bg-navy font-sans transition-colors duration-300">
+    <!-- Apply dark mode before render -->
     <script>
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.documentElement.classList.add('dark');
         }
     </script>
-    <header class="bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
+
+    <!-- ══════════════════════════════════════════
+         HEADER — Glassmorphism sticky
+    ══════════════════════════════════════════ -->
+    <header class="header-glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
             <!-- Branding -->
-            <div class="flex items-center gap-10">
-                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Thomas Canisares--Morère</h1>
-                <p class="text-lg text-gray-600 dark:text-gray-300 hidden sm:block">Engineering student in HPC & Big Data</p>
+            <div class="flex flex-col">
+                <span class="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    Thomas Canisares-Morère
+                </span>
+                <span class="text-xs font-semibold text-primary uppercase tracking-widest hidden sm:block">
+                    Data Scientist · Aviation &amp; Big Data
+                </span>
             </div>
 
-            <!-- Bouton Dark Mode -->
-            <button id="dark-mode-toggle" class="text-3xl bg-gray-200 dark:bg-gray-700 rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
+            <!-- Dark Mode Toggle -->
+            <button id="dark-mode-toggle"
+                class="text-2xl bg-slate-100 dark:bg-navyLight rounded-full w-12 h-12 flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
+                aria-label="Toggle dark mode">
                 🌙
             </button>
         </div>
 
-        <nav class="w-full px-20 py-6">
-            <!-- Bouton burger (visible seulement sur mobile) -->
-            <button class="menu-toggle md:hidden text-3xl font-bold mb-4" aria-label="Open menu">☰</button>
-
-            <!-- Liste des liens -->
-            <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 bg-white dark:bg-gray-800 rounded-3xl py-4 px-6 shadow-lg 
-                    md:flex md:items-center 
-                    hidden md:flex
-                    text-gray-800 dark:text-gray-200">
-
-                <li><a href="index.html" class="block px-6 py-3 rounded-full bg-primary text-white font-semibold">Welcome</a></li>
-                <li><a href="engineering-course.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Engineering Course</a></li>
-                <li><a href="international-mobility.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">International Mobility</a></li>
-                <li><a href="personal-professional-project.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Personal Professional Project</a></li>
-                <li><a href="internships.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Internships</a></li>
-                <li><a href="sustainability.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sustainability & Civic Engagement</a></li>
-                <li><a href="sport.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Sport & Other Activities</a></li>
-                <li><a href="careers.html" class="block px-6 py-3 rounded-full hover:bg-primary hover:text-white transition font-semibold">Careers Section</a></li>
+        <!-- Navigation -->
+        <nav class="w-full px-6 pb-4">
+            <button class="menu-toggle md:hidden text-3xl font-bold mb-3 text-slate-700 dark:text-slate-200" aria-label="Open menu">☰</button>
+            <ul class="hidden md:flex flex-col md:flex-row md:flex-wrap justify-center gap-2
+                       bg-white/70 dark:bg-navyLight/80 backdrop-blur rounded-2xl py-3 px-5 shadow-sm
+                       text-slate-700 dark:text-slate-200">
+                <li><a href="index.html"                    class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Welcome</a></li>
+                <li><a href="engineering-course.html"       class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Engineering Course</a></li>
+                <li><a href="international-mobility.html"   class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">International Mobility</a></li>
+                <li><a href="personal-professional-project.html" class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Personal Professional Project</a></li>
+                <li><a href="internships.html"              class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Internships</a></li>
+                <li><a href="sustainability.html"           class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Sustainability &amp; Civic Engagement</a></li>
+                <li><a href="sport.html"                    class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Sport &amp; Other Activities</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-12">
-        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <!-- Photo à gauche -->
-            <div>
-                <img src="photo_chemise.jpg" alt="Photo of Thomas Canisares-Morère" 
-                     class="w-100 h-100 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] object-cover rounded-full border-8 border-primary shadow-2xl">
-            </div>
+    <!-- ══════════════════════════════════════════
+         HERO SECTION
+    ══════════════════════════════════════════ -->
+    <main>
+        <section class="hero-gradient min-h-[80vh] flex items-center" aria-label="Welcome section">
+            <div class="hero-grid-overlay"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 items-center w-full">
 
-            <!-- Texte + boutons à droite -->
-            <div class="order-1 md:order-2 text-center md:text-left">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                    Hello, and welcome to my eportfolio.
-                </h2>
-                <p class="text-lg text-justify md:text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    I am an engineering student in computer science, specializing in HPC & Big Data at ENSEEIHT.  
-                    I enjoy applied mathematics and algorithmic problem-solving, which are at the heart of my studies.
-                </p>
-                <p class="text-lg text-justify md:text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    As a native of Toulouse, the French capital of aeronautics and aerospace, I am naturally drawn to these sectors, as well as to transportation in general, where computing and mathematics play a key role.
-                </p>
-                <p class="text-lg text-justify md:text-xl text-gray-700 dark:text-gray-300 mb-10 leading-relaxed">
-                    This e-portfolio presents my academic path, professional experiences, and personal projects, but also a part of who I am beyond studies: my commitments, travels, and passions.
-                    Feel free to explore the different sections to learn more about me.
-                </p>
+                <!-- Profile Photo -->
+                <div class="flex justify-center md:justify-start reveal-left">
+                    <div class="profile-ring">
+                        <img src="photo_chemise.jpg"
+                             alt="Thomas Canisares-Morère — Data Scientist"
+                             class="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl"
+                             style="border: 4px solid rgba(34,211,238,0.3);">
+                    </div>
+                </div>
 
-                <!-- Boutons -->
-                <div class="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
-                    <a href="CV_FR.pdf" class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-blue-700 transition shadow-lg text-center" download>
-                        CV in French
-                    </a>
-                    <a href="CV_EN.pdf" class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-blue-700 transition shadow-lg text-center" download>
-                        CV in English
-                    </a>
-                    <a href="https://www.linkedin.com/in/thomas-canisares-morere-03b192328" 
-                         class="bg-[#0077B5] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#006699] transition shadow-lg flex items-center justify-center gap-3" 
-                         target="_blank" rel="noopener">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-                        </svg>
-                        LinkedIn
-                    </a>
+                <!-- Text content -->
+                <div class="text-center md:text-left reveal-right">
+
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6" style="letter-spacing:-0.02em;">
+                        Hello,<br>
+                        <span style="background: linear-gradient(135deg, #0EA5E9, #22D3EE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            and welcome to my eportfolio.
+                        </span>
+                    </h2>
+
+                    <p class="text-lg text-slate-300 mb-4 leading-relaxed text-justify md:text-left">
+                        Engineering student at <strong class="text-white">ENSEEIHT Toulouse INP</strong>,
+                        specializing in <strong class="text-primary">HPC &amp; Big Data</strong>.
+                        I enjoy applied mathematics and algorithmic problem-solving, which are at the heart of my studies.
+                    </p>
+                    <p class="text-lg text-slate-300 mb-4 leading-relaxed text-justify md:text-left">
+                        Native of <strong class="text-white">Toulouse</strong> — the French capital of aeronautics and aerospace —
+                        I am naturally drawn to these sectors, as well as to transportation in general, where computing and mathematics play a key role.
+                    </p>
+                    <p class="text-lg text-slate-300 mb-10 leading-relaxed text-justify md:text-left">
+                        This e-portfolio presents my academic journey, professional experiences,
+                        Erasmus exchange at the <strong class="text-white">University of Stavanger</strong> (Norway),
+                        and the person I am beyond studies. Feel free to explore the different sections to learn more about me.
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start flex-wrap">
+                        <a href="CV_FR.pdf"
+                           class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-xl text-sm"
+                           style="background: linear-gradient(135deg, #0EA5E9, #22D3EE);"
+                           download>
+                            ⬇ CV en français
+                        </a>
+                        <a href="CV_EN.pdf"
+                           class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-xl text-sm"
+                           style="background: linear-gradient(135deg, #0284C7, #0EA5E9);"
+                           download>
+                            ⬇ CV in English
+                        </a>
+                        <a href="https://www.linkedin.com/in/thomas-canisares-morere-03b192328"
+                           class="inline-flex items-center gap-2 bg-[#0077B5] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#006699] transition shadow-lg hover:scale-105 text-sm"
+                           target="_blank" rel="noopener">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             QUICK STATS
+        ══════════════════════════════════════════ -->
+        <section class="bg-white dark:bg-navyLight py-16 border-b border-slate-100 dark:border-navyMid" aria-label="Key statistics">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center reveal reveal-delay-1">
+                        <div class="text-4xl font-extrabold mb-1" style="background: linear-gradient(135deg, #0EA5E9, #22D3EE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            5 ans
+                        </div>
+                        <div class="text-sm text-slate-500 dark:text-slate-400 font-medium">Formation ingénieur</div>
+                    </div>
+                    <div class="text-center reveal reveal-delay-2">
+                        <div class="text-4xl font-extrabold mb-1" style="background: linear-gradient(135deg, #0EA5E9, #22D3EE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            🇳🇴 Erasmus
+                        </div>
+                        <div class="text-sm text-slate-500 dark:text-slate-400 font-medium">Université de Stavanger</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             FEATURED SKILLS
+        ══════════════════════════════════════════ -->
+        <section class="py-20 max-w-6xl mx-auto px-6" aria-label="Key skills">
+            <div class="text-center mb-14 reveal">
+                <h2 class="section-title section-title-center text-slate-900 dark:text-white text-3xl font-extrabold mb-3">
+                    Technical Skills
+                </h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-6 text-base">Technologies &amp; tools I work with across my projects and internships</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Big Data & Engineering -->
+                <div class="reveal">
+                    <p class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-widest mb-3">Big Data &amp; Data Engineering</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge badge-data">Polars</span>
+                        <span class="badge badge-data">PyArrow</span>
+                        <span class="badge badge-data">Parquet</span>
+                        <span class="badge badge-data">Pandas</span>
+                        <span class="badge badge-data">SQL</span>
+                        <span class="badge badge-cloud">PySpark</span>
+                    </div>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="reveal reveal-delay-1">
+                    <p class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-widest mb-3">Machine Learning &amp; Statistics</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge badge-ml">HDBSCAN</span>
+                        <span class="badge badge-ml">K-Means</span>
+                        <span class="badge badge-ml">ACP / PCA</span>
+                        <span class="badge badge-ml">SVM / One-Class SVM</span>
+                        <span class="badge badge-ml">Scikit-learn</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="reveal reveal-delay-2">
+                    <p class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-widest mb-3">Programming Languages</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge badge-python">Python</span>
+                        <span class="badge badge-r">R</span>
+                        <span class="badge badge-python">Java</span>
+                        <span class="badge badge-python">C</span>
+                        <span class="badge badge-cloud">SQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Section Vidéo "More about me" -->
-    <section class="max-w-5xl mx-auto px-4 py-16 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12">
-            More about me
-        </h2>
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-video bg-black">
-            <iframe 
-                class="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/oSU0XH145bg?rel=0"
-                title="Personal Presentation"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
-    </section>
-
-    <!-- Footer avec background flux -->
-    <footer class="relative bg-cover bg-center py-12 mt-16 overflow-hidden" style="background-image: url('flux_background.png');">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
-        <div class="relative max-w-6xl mx-auto px-4 z-10">
-            <!-- Coordonnées -->
-            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6 text-white">
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">📞</span> 
-                    +33 6 12 02 53 62
+    <!-- ══════════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════════ -->
+    <footer class="footer-aero py-12 mt-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center md:text-left mb-6 text-slate-300">
+                <p class="flex items-center gap-3 text-base">
+                    <span>📞</span> +33 6 12 02 53 62
                 </p>
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">✉️</span> 
-                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr" class="hover:underline">
+                <p class="flex items-center gap-3 text-base">
+                    <span>✉️</span>
+                    <a href="mailto:thomas.canisaresmorere@etu.toulouse-inp.fr"
+                       class="hover:text-cyan transition-colors">
                         thomas.canisaresmorere@etu.toulouse-inp.fr
                     </a>
                 </p>
-                <p class="text-lg flex items-center gap-3">
-                    <span class="font-bold">🏠</span> 
-                    31100 Toulouse, France
+                <p class="flex items-center gap-3 text-base">
+                    <span>🏠</span> 31100 Toulouse, France
                 </p>
             </div>
-
-            <!-- Copyright -->
-            <div class="text-center text-sm text-white/80">
+            <div class="text-center text-sm text-slate-500">
                 © <span id="year"></span> Thomas Canisares-Morère. All rights reserved.
             </div>
         </div>

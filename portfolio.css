@@ -1,0 +1,797 @@
+/* ============================================================
+   PORTFOLIO.CSS — Design System "Deep Aero"
+   Thomas Canisares-Morère | Aviation Data Scientist Portfolio
+   ============================================================ */
+
+/* ── Google Fonts already loaded via HTML ── */
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (TOKENS)
+   ============================================================ */
+:root {
+  /* Palette Deep Aero */
+  --color-navy:       #0A1628;
+  --color-navy-light: #112240;
+  --color-navy-mid:   #1E3A5F;
+  --color-sky:        #0EA5E9;
+  --color-sky-dark:   #0284C7;
+  --color-cyan:       #22D3EE;
+  --color-cyan-dark:  #06B6D4;
+  --color-white:      #F8FAFC;
+  --color-slate-100:  #F1F5F9;
+  --color-slate-200:  #E2E8F0;
+  --color-slate-400:  #94A3B8;
+  --color-slate-600:  #475569;
+  --color-slate-800:  #1E293B;
+
+  /* Gradients */
+  --grad-aero: linear-gradient(135deg, #0EA5E9 0%, #22D3EE 50%, #0284C7 100%);
+  --grad-navy: linear-gradient(135deg, #0A1628 0%, #112240 50%, #1E3A5F 100%);
+  --grad-hero: linear-gradient(135deg, #0A1628 0%, #0c1e3d 40%, #1a3860 70%, #0EA5E9 100%);
+
+  /* Shadows */
+  --shadow-card:   0 4px 24px rgba(14, 165, 233, 0.12);
+  --shadow-hover:  0 12px 40px rgba(14, 165, 233, 0.28);
+  --shadow-glow:   0 0 30px rgba(34, 211, 238, 0.2);
+
+  /* Border radius */
+  --radius-card:   1.5rem;
+  --radius-badge:  9999px;
+
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseCyan {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(34, 211, 238, 0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   SCROLL REVEAL (via IntersectionObserver in script.js)
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ============================================================
+   HEADER — GLASSMORPHISM
+   ============================================================ */
+
+.header-glass {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(14, 165, 233, 0.12);
+  transition: var(--transition-smooth);
+}
+
+.dark .header-glass {
+  background: rgba(10, 22, 40, 0.88);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.12);
+}
+
+/* ============================================================
+   HERO — ANIMATED GRADIENT BACKGROUND
+   ============================================================ */
+
+.hero-gradient {
+  background: var(--grad-hero);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Grid overlay subtle */
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ============================================================
+   PROFILE PHOTO RING
+   ============================================================ */
+
+.profile-ring {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-ring::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: var(--grad-aero);
+  background-size: 200% 200%;
+  animation: rotateSlow 6s linear infinite;
+  z-index: -1;
+}
+
+.profile-ring img {
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   STAT CARDS (Quick Stats on Welcome page)
+   ============================================================ */
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+  animation: float 4s ease-in-out infinite;
+}
+
+.stat-card:nth-child(2) { animation-delay: 1s; }
+.stat-card:nth-child(3) { animation-delay: 2s; }
+
+.stat-card:hover {
+  background: rgba(14, 165, 233, 0.2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--grad-aero);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+/* ============================================================
+   TECHNOLOGY BADGES
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-badge);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: var(--transition-smooth);
+  cursor: default;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Badge variants par catégorie */
+.badge-python {
+  background: rgba(14, 165, 233, 0.15);
+  color: #0EA5E9;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.badge-r {
+  background: rgba(34, 211, 238, 0.12);
+  color: #06B6D4;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+.badge-data {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818CF8;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.badge-ml {
+  background: rgba(168, 85, 247, 0.15);
+  color: #C084FC;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badge-aero {
+  background: rgba(251, 191, 36, 0.15);
+  color: #FBBF24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.badge-cloud {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.badge-viz {
+  background: rgba(251, 113, 133, 0.15);
+  color: #FB7185;
+  border: 1px solid rgba(251, 113, 133, 0.3);
+}
+
+/* Dark mode badge adjustments */
+.dark .badge-python { background: rgba(14, 165, 233, 0.2); }
+.dark .badge-r      { background: rgba(34, 211, 238, 0.18); }
+.dark .badge-data   { background: rgba(99, 102, 241, 0.2); }
+.dark .badge-ml     { background: rgba(168, 85, 247, 0.2); }
+.dark .badge-aero   { background: rgba(251, 191, 36, 0.2); }
+.dark .badge-cloud  { background: rgba(52, 211, 153, 0.2); }
+.dark .badge-viz    { background: rgba(251, 113, 133, 0.2); }
+
+/* ============================================================
+   LIVRABLE CARDS (Internship deliverables)
+   ============================================================ */
+
+.livrable-card {
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .livrable-card {
+  background: #112240;
+  border-color: rgba(34, 211, 238, 0.15);
+}
+
+.livrable-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--grad-aero);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.livrable-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+.livrable-card:hover::before {
+  opacity: 1;
+}
+
+/* Livrable icon */
+.livrable-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.livrable-icon-nb  { background: rgba(14, 165, 233, 0.12); }
+.livrable-icon-pdf { background: rgba(239, 68, 68, 0.12); }
+.livrable-icon-r   { background: rgba(34, 211, 238, 0.12); }
+
+/* Livrable action button */
+.btn-livrable {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-badge);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-download {
+  background: linear-gradient(135deg, #0EA5E9, #22D3EE);
+  color: white;
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+}
+
+.btn-view {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0EA5E9;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.dark .btn-view {
+  background: rgba(14, 165, 233, 0.15);
+  color: #38BDF8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.btn-view:hover {
+  background: rgba(14, 165, 233, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   SECTION BANNERS (Hero bands on inner pages)
+   ============================================================ */
+
+.page-hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--grad-hero);
+  background-size: 300% 300%;
+  animation: gradientShift 14s ease infinite;
+  overflow: hidden;
+}
+
+.page-hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.page-hero-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 60%, rgba(34, 211, 238, 0.12) 0%, transparent 55%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+}
+
+.page-hero-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  letter-spacing: -0.02em;
+}
+
+.page-hero-subtitle {
+  color: rgba(34, 211, 238, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   FEATURED BADGE (Stage DGAC highlight)
+   ============================================================ */
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.1));
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  color: #FBBF24;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-badge);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  animation: pulseCyan 2.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   INTERNSHIP HEADER CARD
+   ============================================================ */
+
+.internship-header {
+  position: relative;
+  background: var(--grad-navy);
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.internship-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(14, 165, 233, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.internship-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--grad-aero);
+}
+
+/* ============================================================
+   VOLET SECTIONS (Partie 1 / Partie 2)
+   ============================================================ */
+
+.volet-section {
+  border-radius: 1.25rem;
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.dark .volet-section {
+  border-color: rgba(34, 211, 238, 0.15);
+}
+
+.volet-header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.volet-header:hover {
+  background: rgba(14, 165, 233, 0.05);
+}
+
+.volet-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grad-aero);
+  color: white;
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.volet-content {
+  padding: 0 2rem 2rem;
+}
+
+/* ============================================================
+   TIMELINE (Engineering Course page)
+   ============================================================ */
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0EA5E9, #22D3EE, #0EA5E9);
+  border-radius: 999px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #0EA5E9, #22D3EE);
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+  z-index: 10;
+  transition: var(--transition-smooth);
+}
+
+.dark .timeline-dot {
+  border-color: #0A1628;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.2);
+}
+
+.timeline-dot:hover {
+  transform: translateX(-50%) scale(1.3);
+  box-shadow: 0 0 0 8px rgba(14, 165, 233, 0.15);
+}
+
+/* ============================================================
+   NAV ACTIVE STATE
+   ============================================================ */
+
+.nav-active {
+  background: linear-gradient(135deg, #0EA5E9, #22D3EE) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+}
+
+/* ============================================================
+   SECTION TITLES
+   ============================================================ */
+
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--grad-aero);
+  border-radius: 999px;
+}
+
+.section-title-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer-aero {
+  background: var(--grad-navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-aero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--grad-aero);
+}
+
+/* ============================================================
+   SKILL CARDS (Key Skills section)
+   ============================================================ */
+
+.skill-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: 0 2px 16px rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.dark .skill-card {
+  background: #112240;
+  border-color: rgba(34, 211, 238, 0.12);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+/* ============================================================
+   COUNTRY CARD (International Mobility)
+   ============================================================ */
+
+.country-card {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: var(--transition-smooth);
+  background: white;
+}
+
+.dark .country-card {
+  background: #112240;
+}
+
+.country-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .page-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .internship-header {
+    padding: 2rem 1.5rem;
+  }
+
+  .volet-content {
+    padding: 0 1rem 1.5rem;
+  }
+
+  .stat-card {
+    animation: none; /* reduce motion on mobile */
+  }
+}
+
+/* ============================================================
+   SMOOTH SCROLLING & SELECTION
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(14, 165, 233, 0.25);
+  color: inherit;
+}
+
+/* ============================================================
+   SCROLLBAR (WebKit)
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #0EA5E9, #22D3EE);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0284C7, #06B6D4);
+}
