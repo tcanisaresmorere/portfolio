@@ -43,7 +43,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
             <div class="flex flex-col">
                 <span class="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Thomas Canisares-Morère</span>
-                <span class="text-xs font-semibold text-primary uppercase tracking-widest hidden sm:block">Data Scientist · Aviation &amp; Big Data</span>
+                <span class="text-xs font-semibold text-primary uppercase tracking-widest hidden sm:block">Engineering student in HPC &amp; Big Data</span>
             </div>
             <button id="dark-mode-toggle" class="text-2xl bg-slate-100 dark:bg-navyLight rounded-full w-12 h-12 flex items-center justify-center hover:scale-110 transition-transform shadow-sm" aria-label="Toggle dark mode">🌙</button>
         </div>
@@ -58,7 +58,6 @@
                 <li><a href="personal-professional-project.html" class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Personal Professional Project</a></li>
                 <li><a href="internships.html"                   class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Internships</a></li>
                 <li><a href="sustainability.html"                class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Sustainability &amp; Civic Engagement</a></li>
-                <li><a href="sport.html"                         class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Sport &amp; Other Activities</a></li>
             </ul>
         </nav>
     </header>
@@ -91,6 +90,12 @@
                         <div class="relative z-10">
                             <div class="flex justify-center mb-4">
                                 <span class="featured-badge">✅ Erasmus Exchange · In Progress</span>
+                            </div>
+                            <div class="flex justify-center mb-3">
+                                <img src="logo_uis.png" alt="University of Stavanger logo"
+                                     class="h-14 object-contain bg-white/95 rounded-lg px-3 py-2"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+                                <span class="items-center gap-2 text-xs font-semibold text-slate-300 uppercase tracking-widest bg-white/10 px-3 py-2 rounded-lg" style="display:none;">🎓 University of Stavanger</span>
                             </div>
                             <div class="text-6xl text-center mb-4">🇳🇴</div>
                             <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">
@@ -184,6 +189,22 @@
                                 The immersive English environment also significantly strengthened my ability to work in international, multicultural teams — a key asset for a career at companies such as Airbus.
                             </p>
                         </div>
+
+                        <!-- Photo Gallery -->
+                        <div class="mt-10 reveal" aria-label="Erasmus photo gallery">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                <span class="text-primary">▸</span> Photo Gallery — Life in Stavanger
+                            </h3>
+                            <div class="carousel" id="erasmus-carousel">
+                                <div class="carousel-track" id="erasmus-carousel-track"></div>
+                                <button type="button" class="carousel-btn carousel-prev" id="erasmus-carousel-prev" aria-label="Previous photo">‹</button>
+                                <button type="button" class="carousel-btn carousel-next" id="erasmus-carousel-next" aria-label="Next photo">›</button>
+                                <div class="carousel-dots" id="erasmus-carousel-dots"></div>
+                            </div>
+                            <p class="text-xs text-slate-400 dark:text-slate-500 mt-3 text-center">
+                                Swipe or use the arrows to browse photos from my exchange semester.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -255,5 +276,70 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Erasmus photo gallery — edit this array to add/remove photos.
+         Drop image files into the erasmus-photos/ folder and reference them here. -->
+    <script>
+        const erasmusPhotos = [
+            { src: 'erasmus-photos/photo-1.jpg', caption: 'Stavanger, Norway' },
+            { src: 'erasmus-photos/photo-2.jpg', caption: 'University of Stavanger campus' },
+            { src: 'erasmus-photos/photo-3.jpg', caption: 'Exploring the fjords' },
+        ];
+
+        (function initErasmusCarousel() {
+            const track = document.getElementById('erasmus-carousel-track');
+            const dotsWrap = document.getElementById('erasmus-carousel-dots');
+            const prevBtn = document.getElementById('erasmus-carousel-prev');
+            const nextBtn = document.getElementById('erasmus-carousel-next');
+            const carousel = document.getElementById('erasmus-carousel');
+            if (!track || erasmusPhotos.length === 0) return;
+
+            let current = 0;
+
+            erasmusPhotos.forEach((photo, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                slide.innerHTML = `
+                    <img src="${photo.src}" alt="${photo.caption}"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="carousel-slide-fallback">
+                        <span style="font-size:2.5rem;">🖼️</span>
+                        <span>Add ${photo.src} to see this photo</span>
+                    </div>
+                    <div class="carousel-caption">${photo.caption}</div>
+                `;
+                track.appendChild(slide);
+
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Go to photo ${i + 1}`);
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+
+            const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+            function goTo(index) {
+                current = (index + erasmusPhotos.length) % erasmusPhotos.length;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            }
+
+            prevBtn.addEventListener('click', () => goTo(current - 1));
+            nextBtn.addEventListener('click', () => goTo(current + 1));
+
+            let touchStartX = 0;
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+            carousel.addEventListener('touchend', (e) => {
+                const delta = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(delta) > 40) {
+                    delta < 0 ? goTo(current + 1) : goTo(current - 1);
+                }
+            }, { passive: true });
+        })();
+    </script>
 </body>
 </html>

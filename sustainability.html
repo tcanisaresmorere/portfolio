@@ -37,7 +37,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
             <div class="flex flex-col">
                 <span class="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Thomas Canisares-Morère</span>
-                <span class="text-xs font-semibold text-primary uppercase tracking-widest hidden sm:block">Data Scientist · Aviation &amp; Big Data</span>
+                <span class="text-xs font-semibold text-primary uppercase tracking-widest hidden sm:block">Engineering student in HPC &amp; Big Data</span>
             </div>
             <button id="dark-mode-toggle" class="text-2xl bg-slate-100 dark:bg-navyLight rounded-full w-12 h-12 flex items-center justify-center hover:scale-110 transition-transform shadow-sm" aria-label="Toggle dark mode">🌙</button>
         </div>
@@ -52,7 +52,6 @@
                 <li><a href="personal-professional-project.html" class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Personal Professional Project</a></li>
                 <li><a href="internships.html"                   class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Internships</a></li>
                 <li><a href="sustainability.html"                class="block px-5 py-2.5 rounded-full bg-primary text-white font-semibold text-sm">Sustainability &amp; Civic Engagement</a></li>
-                <li><a href="sport.html"                         class="block px-5 py-2.5 rounded-full font-semibold transition hover:bg-primary hover:text-white text-sm">Sport &amp; Other Activities</a></li>
             </ul>
         </nav>
     </header>
@@ -69,24 +68,59 @@
 
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-16">
             <p class="text-lg text-center text-slate-600 dark:text-slate-300 max-w-4xl mx-auto mb-16 leading-relaxed reveal">
-                At ENSEEIHT, students are encouraged to take part in activities that raise awareness about global challenges and social responsibility.
-                During my first year, I had the opportunity to participate in two major initiatives.
+                Beyond academics, one cause matters deeply to me on a personal level: raising awareness about disability and championing inclusion —
+                a commitment rooted in my own family and carried forward through the initiatives I take part in.
             </p>
+
+            <!-- My Brother Milo -->
+            <section class="mb-16 reveal" aria-label="Personal connection to disability">
+                <div class="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-xl grid md:grid-cols-2" style="border: 1px solid rgba(14,165,233,0.12);">
+                    <div class="bg-white dark:bg-navyLight p-10 flex flex-col justify-center order-2 md:order-1">
+                        <h2 class="text-2xl font-extrabold text-primary mb-4">My Brother Milo</h2>
+                        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            My 15-year-old brother, Milo, is autistic. Growing up alongside him has shaped who I am —
+                            every day, I am directly involved in supporting him, understanding his needs, and adapting to the challenges that come with autism.
+                        </p>
+                        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                            This close, daily relationship with disability gave me a genuine sensitivity to inclusion long before I encountered it in an academic setting —
+                            it is a cause I carry with me, not one I discovered by chance.
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 relative min-h-[260px]">
+                        <img src="milo_thomas.jpg" alt="Milo and Thomas — my brother and me"
+                             class="absolute inset-0 w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 text-center p-8 text-white"
+                             style="display:none; background: linear-gradient(135deg, #7c3aed, #db2777);">
+                            <span class="text-5xl">📷</span>
+                            <p class="text-sm font-semibold">Photo of Milo and me — coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <div class="grid md:grid-cols-2 max-w-7xl mx-auto gap-10">
 
-                <!-- Climate Fresk -->
+                <!-- Association Inpacts -->
                 <div class="country-card dark:bg-navyLight reveal reveal-delay-1">
-                    <div class="py-10 text-center text-6xl" style="background: linear-gradient(135deg, #16a34a, #0d9488);">🌍</div>
+                    <div class="relative h-40 flex items-center justify-center p-6" style="background: linear-gradient(135deg, #7c3aed, #db2777);">
+                        <img src="logo_inpacts.jpg" alt="Association Inpacts logo"
+                             class="max-h-24 max-w-[70%] object-contain bg-white rounded-xl p-2"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="flex-col items-center gap-2 text-white text-center" style="display:none;">
+                            <span class="text-4xl">🤝</span>
+                            <p class="text-xs font-semibold">Inpacts logo — coming soon</p>
+                        </div>
+                    </div>
                     <div class="p-10">
-                        <h2 class="text-2xl font-extrabold text-primary mb-4">Climate Fresk</h2>
+                        <h2 class="text-2xl font-extrabold text-primary mb-4">Association Inpacts</h2>
                         <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            The Climate Fresk is a collaborative workshop designed to raise awareness about climate change by connecting scientific data with real-world impacts.
-                            In small groups, we built a visual map of the causes and consequences of global warming.
+                            Inpacts brings together a multidisciplinary team of professionals — educators, therapists and specialized caregivers —
+                            who provide tailored education and specialized care for people with autism and other disabilities.
                         </p>
                         <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                            This activity allowed me to deepen my understanding of environmental issues.
-                            It also highlighted the role that engineers must play in building sustainable solutions for the future.
+                            My brother Milo is supported by Inpacts, and seeing this team's dedication up close has deepened my respect for the professionals
+                            who work every day to improve the lives of people with disabilities and their families.
                         </p>
                     </div>
                 </div>
@@ -97,11 +131,11 @@
                     <div class="p-10">
                         <h2 class="text-2xl font-extrabold text-primary mb-4">Disability Awareness Day</h2>
                         <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            The Disability Awareness Day was particularly meaningful to me on a personal level.
-                            Having a younger brother with autism, I have always been deeply aware of the importance of inclusion and understanding towards people with disabilities.
+                            At ENSEEIHT, I helped organize the Disability Awareness Day — an initiative that was particularly meaningful to me
+                            given my personal connection to disability through my brother Milo.
                         </p>
                         <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                            I strongly believe that such initiatives are a real opportunity for students, as they encourage us to develop empathy and openness.
+                            I strongly believe such initiatives give students a real opportunity to develop empathy and openness.
                             I am sincerely grateful that ENSEEIHT supports these values and actively promotes awareness of the challenges faced by people with disabilities.
                         </p>
                     </div>
